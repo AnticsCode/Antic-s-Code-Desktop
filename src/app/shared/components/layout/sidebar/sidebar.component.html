@@ -1,0 +1,7 @@
+<ul>
+ <li *ngFor="let item of items"
+      [routerLink]="item.link">
+  <nb-icon [icon]="item.icon"></nb-icon>
+    {{ item.name }}
+ </li>
+</ul>

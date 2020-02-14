@@ -1,0 +1,5 @@
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  &:hover { filter: brightness(1.2) }
+}
