@@ -3,3 +3,26 @@ a {
   text-decoration: none;
   &:hover { filter: brightness(1.2) }
 }
+
+code {
+  font-size: 1em;
+  padding: .86667rem 1rem !important;
+  border-radius: 5px;
+  border-top: 0;
+  box-sizing: border-box;
+  font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+}
+
+.code {
+  padding: 0 2px;
+  font-size: 0.94rem;
+  word-break: break-word;
+  color: #727272;
+  font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+}
+
+.code-box {
+  margin: 30px auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+}

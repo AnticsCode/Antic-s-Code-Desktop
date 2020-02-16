@@ -1,0 +1,34 @@
+@import '../../../../../../../assets/styles/themes/themes.scss';
+
+@include nb-install-component {
+  .code {
+    background: nb-theme(color-warning-transparent-400) !important;
+  }
+}
+
+.template {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 0;
+  bottom: 0;
+  left: var(--index-width);
+  right: 0;
+  height: auto;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.flex {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.spinner {
+  position: absolute;
+  top: 31%;
+  left: 5%;
+  width: 100%;
+}
+

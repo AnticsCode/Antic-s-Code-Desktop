@@ -10,12 +10,12 @@ import { MenuItem } from '@app/shared/interfaces/interfaces';
 export class SidebarComponent implements OnInit {
 
   items: MenuItem[] = [
-    { name: 'Home', link: '/', icon: 'home-outline' },
-    { name: 'Noticias', link: '/', icon: 'cast-outline' },
+    { name: 'Home', link: '/home', icon: 'home-outline' },
+    { name: 'Noticias', link: './news', icon: 'cast-outline' },
     { name: 'Artículos', link: './articles', icon: 'file-text-outline' },
-    { name: 'Categorías', link: '/', icon: 'pricetags-outline' },
-    { name: 'Escritores', link: '/', icon: 'edit-2-outline' },
-    { name: 'Ayuda', link: '/', icon: 'question-mark-circle-outline' }
+    { name: 'Categorías', link: './categories', icon: 'pricetags-outline' },
+    { name: 'Escritores', link: './writers', icon: 'edit-2-outline' },
+    { name: 'Ayuda', link: './help', icon: 'question-mark-circle-outline' }
   ];
 
   constructor() { }

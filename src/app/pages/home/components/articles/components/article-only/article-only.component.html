@@ -1,0 +1,10 @@
+<div class="template"
+     *ngIf="article"
+     [innerHTML]="article.message">
+</div>
+
+<div class="flex" *ngIf="!article">
+  <div class="spinner">
+    <app-spinner></app-spinner>
+  </div>
+</div>
