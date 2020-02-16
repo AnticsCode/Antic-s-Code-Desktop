@@ -96,6 +96,12 @@ export interface MenuItem {
   icon: string;
 }
 
+export interface HeaderAction {
+  icon: string;
+  link: string;
+  status?: string;
+}
+
 export class CustomError {
   name: string;
   message: string;

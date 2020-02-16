@@ -37,6 +37,13 @@ export class ArticleOnlyComponent implements OnInit, OnDestroy {
     } , (err: HttpErrorResponse) => console.log(err));
   }
 
+  onReady(text?: string): void {
+    const exp = /```((?!```)(.|\n))*```/gm;
+    if (text) {
+      console.log(exp.exec(text));
+    }
+  }
+
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();

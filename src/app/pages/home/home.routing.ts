@@ -13,7 +13,12 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./components/hero/hero.module')
                         .then(mod => mod.HeroModule), data: {name: 'Hero'}
+      },{
+        path: 'create',
+        loadChildren: () => import('./components/create/create.module')
+                        .then(mod => mod.CreateModule), data: {name: 'Create'}
       },
+
       {
         path: 'articles',
         loadChildren: () => import('./components/articles/articles.module')

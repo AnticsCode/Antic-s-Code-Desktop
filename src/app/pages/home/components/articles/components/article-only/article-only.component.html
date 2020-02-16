@@ -1,6 +1,10 @@
 <div class="template"
-     *ngIf="article"
-     [innerHTML]="article.message">
+     *ngIf="article">
+     <markdown ngPreserveWhitespaces
+               [lineHighlight]="true"
+               [data]="article.message"
+               (ready)="onReady(article.message)">
+     </markdown>
 </div>
 
 <div class="flex" *ngIf="!article">

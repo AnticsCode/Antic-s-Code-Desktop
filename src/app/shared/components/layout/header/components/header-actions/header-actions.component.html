@@ -1,11 +1,6 @@
 <nb-actions size="small">
- <nb-action>
-   <nb-icon icon="brush-outline" status="success"></nb-icon>
- </nb-action>
- <nb-action icon="search-outline"></nb-action>
- <nb-action icon="person-outline"></nb-action>
- <nb-action icon="settings-2-outline"></nb-action>
- <nb-action>
-   <nb-icon icon="power-outline" status="danger"></nb-icon>
- </nb-action>
+  <nb-action *ngFor="let a of actions"
+              [routerLink]="a.link">
+    <nb-icon [icon]="a.icon" [status]="a.status"></nb-icon>
+  </nb-action>
 </nb-actions>
