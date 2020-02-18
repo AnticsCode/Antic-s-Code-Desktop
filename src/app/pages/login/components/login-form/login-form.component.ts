@@ -30,7 +30,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.createSignInForm();
     this.rememberMe();
-    this.signIn('allison@anticscode.epizy.com', 'zebrahead');
   }
 
   onSubmit(): void {

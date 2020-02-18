@@ -27,10 +27,10 @@ export function markedOptionsFactory(): MarkedOptions {
   return {
     renderer,
     gfm: true,
-    tables: true,
+    tables: false,
     breaks: false,
     pedantic: false,
-    sanitize: false,
+    sanitize: true,
     smartLists: true,
     smartypants: false,
   };

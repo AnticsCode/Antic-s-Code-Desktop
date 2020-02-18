@@ -29,13 +29,11 @@
               "./node_modules/@nebular/theme/styles/prebuilt/default.css",
               "./node_modules/@nebular/theme/styles/prebuilt/dark.css",
               "./node_modules/@nebular/theme/styles/prebuilt/cosmic.css",
-              "./node_modules/prismjs/themes/prism-tomorrow.css",
-              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css"
+              "./node_modules/prismjs/themes/prism-tomorrow.css"
             ],
             "scripts": [
               "./node_modules/marked/lib/marked.js",
               "./node_modules/prismjs/prism.js",
-              "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.js",
               "./node_modules/prismjs/components/prism-css.min.js",
               "./node_modules/prismjs/components/prism-javascript.min.js",
               "./node_modules/prismjs/components/prism-json.min.js",

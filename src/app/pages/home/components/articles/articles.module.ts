@@ -10,13 +10,15 @@ import { ArticlesComponent } from './articles.component';
 import { ArticlesIndexComponent } from './components/articles-index/articles-index.component';
 import { ArticleOnlyComponent } from './components/article-only/article-only.component';
 import { ArticlesIntroComponent } from './components/articles-intro/articles-intro.component';
+import { ArticleHeaderComponent } from './components/article-header/article-header.component';
 
 @NgModule({
   declarations: [
     ArticlesComponent,
     ArticlesIndexComponent,
     ArticleOnlyComponent,
-    ArticlesIntroComponent
+    ArticlesIntroComponent,
+    ArticleHeaderComponent
   ],
   imports: [
     CommonModule,

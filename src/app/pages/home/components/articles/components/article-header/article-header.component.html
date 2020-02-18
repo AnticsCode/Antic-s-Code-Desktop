@@ -1,0 +1,21 @@
+<div class="header">
+  <img [src]="article.cover">
+  <div class="info">
+    <h4>{{article.title}}</h4>
+    <div class="bottom">
+      <span>Creado el {{article.created}}</span>
+      <div class="author">
+        <!-- <img alt="category" [src]="(article.category | logo) | image:'logos'">
+        <span>{{article.category}}</span>
+        <nb-icon status="info" icon="eye-outline"></nb-icon>
+        <span>{{article.views}}</span>
+        <nb-icon status="danger" icon="heart-outline"></nb-icon>
+        <span>{{article.likes}}</span> -->
+        <span>
+          Escrito por
+          <span class="bold">{{article.author}}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
