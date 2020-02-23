@@ -4,13 +4,11 @@
   nb-list-item {
     border-top: 1px solid nb-theme(border-primary-color-2);
     &:hover {
-      filter: brightness(.8);
       cursor: pointer;
       background: nb-theme(background-basic-color-4);
     }
 
     &.active {
-      filter: brightness(.8);
       background: nb-theme(background-basic-color-4);
     }
   }
@@ -36,6 +34,10 @@ nb-list-item {
   flex-direction: column;
   &:first-child {
     border-top: none !important;
+  }
+
+  &:hover .detail {
+    opacity: 1;
   }
 }
 
@@ -87,6 +89,8 @@ nb-list-item {
   position: absolute;
   right: 1rem;
   top: 40%;
+  opacity: 0;
+  transition: opacity .5s ease-in;
 }
 
 

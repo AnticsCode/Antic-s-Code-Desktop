@@ -4,5 +4,6 @@ export { ErrorService } from './error/error.service';
 export { LoginService } from './login/login.service';
 export { UserService } from './user/user.service';
 export { ArticlesService } from './articles/articles.service';
+export { CrafterService } from './crafter/crafter.service';
 
 

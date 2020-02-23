@@ -13,7 +13,6 @@ export class SidebarComponent implements OnInit {
     { name: 'Home', link: '/home', icon: 'home-outline' },
     { name: 'Noticias', link: './news', icon: 'cast-outline' },
     { name: 'Artículos', link: './articles', icon: 'file-text-outline' },
-    { name: 'Categorías', link: './categories', icon: 'pricetags-outline' },
     { name: 'Escritores', link: './writers', icon: 'edit-2-outline' },
     { name: 'Ayuda', link: './help', icon: 'question-mark-circle-outline' }
   ];

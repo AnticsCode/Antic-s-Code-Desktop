@@ -18,6 +18,8 @@ import { ServicesModule } from './services/services.module';
 import { JwtInterceptor } from './services/http/jwt.interceptor';
 import { NgMarkdownModule } from './markdown/markdown.module';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { NgMarkdownModule } from './markdown/markdown.module';
     ServicesModule,
     LanguageModule.forRoot(),
     NgMarkdownModule,
+    ToastrModule.forRoot(),
     NgxWebstorageModule.forRoot(CORE_MODULE_CONSTANTS.WEBSTORAGE_CONFIG),
     TranslateModule.forRoot({
       loader: {

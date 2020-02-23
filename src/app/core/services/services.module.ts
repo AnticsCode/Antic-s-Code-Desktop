@@ -7,7 +7,8 @@ import {
   ErrorService,
   LoginService,
   UserService,
-  ArticlesService
+  ArticlesService,
+  CrafterService
   } from './services.index';
 
 @NgModule({
@@ -20,7 +21,8 @@ import {
     ErrorService,
     LoginService,
     UserService,
-    ArticlesService
+    ArticlesService,
+    CrafterService
   ]
 })
 

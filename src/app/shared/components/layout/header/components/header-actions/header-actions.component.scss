@@ -1,4 +1,19 @@
 nb-action {
-  cursor: pointer;
   outline: none;
+
+  & nb-icon {
+    cursor: pointer;
+  }
 }
+
+button {
+  text-align: center;
+  font-size: 1.1rem;
+
+  & nb-icon {
+    margin-left: .3rem;
+    position: relative;
+    top: 2px;
+  }
+}
+
