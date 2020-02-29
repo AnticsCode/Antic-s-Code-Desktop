@@ -4,6 +4,10 @@
   .search-bar {
     background: nb-theme(background-basic-color-2);
   }
+
+  .close {
+    color: nb-theme(text-basic-color);
+  }
 }
 
 .search-bar {
@@ -40,7 +44,6 @@
     font-size: 2rem;
     position: relative;
     top: 1rem;
-    color: white;
     cursor: pointer;
   }
 }

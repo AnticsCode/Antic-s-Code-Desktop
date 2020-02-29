@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APP_CONSTANTS } from '@app/app.config';
 
 @Component({
   selector: 'app-hero-content',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HeroContentComponent implements OnInit {
+
+  version = APP_CONSTANTS.APP_VERSION;
 
   constructor() { }
 

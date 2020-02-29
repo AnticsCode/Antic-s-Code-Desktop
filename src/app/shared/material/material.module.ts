@@ -14,7 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatFormFieldModule, MatInputModule,
     MatCheckboxModule, MatTooltipModule,
     MatDialogModule, MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   exports: [
     MatFormFieldModule, MatInputModule,
