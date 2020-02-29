@@ -1,6 +1,6 @@
 {
   "name": "antics-code-desktop",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Antic's Code Desktop App",
   "author": "Sergio Martínez",
   "main": "main.js",
