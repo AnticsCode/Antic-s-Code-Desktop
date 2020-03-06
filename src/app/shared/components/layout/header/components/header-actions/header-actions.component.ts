@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { remote } from 'electron';
 
 @Component({
   selector: 'app-header-actions',
@@ -8,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderActionsComponent implements OnInit {
 
+  show = false;
+
   constructor() { }
 
   ngOnInit() { }
+
+  exit(): void {
+    const win = remote.getCurrentWindow();
+    win.close();
+  }
+
 
 }

@@ -27,8 +27,8 @@ function createWindow(): BrowserWindow {
     height,
     maxWidth: width,
     maxHeight: height,
-    minWidth: size.width,
-    minHeight: size.height,
+    minWidth: width,
+    minHeight: height,
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: (serve) ? true : false,

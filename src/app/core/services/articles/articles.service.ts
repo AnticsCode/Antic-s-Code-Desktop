@@ -9,14 +9,32 @@ import { ArticleResponse } from '@app/shared/interfaces/interfaces';
 
 export class ArticlesService {
 
-  readonly API_ARTICLES = APP_CONSTANTS.END_POINT + 'articles/user';
+  readonly API_ARTICLES = APP_CONSTANTS.END_POINT + 'articles/';
+  public page = 0;
 
   constructor(private http: HttpService) {
       if (!environment.production) { console.log('ArticlesService'); }
   }
 
+  public getArticles(limit?: number): Observable<ArticleResponse> {
+    this.page++;
+    return this.http.get(this.API_ARTICLES + '?page=' + this.page + '&limit=' + limit);
+  }
+
   public getArticlesByUser(): Observable<ArticleResponse> {
     return this.http.get(this.API_ARTICLES + 'user');
+  }
+
+  public getArticleBySlug(slug: string): Observable<ArticleResponse> {
+    return this.http.get(APP_CONSTANTS.END_POINT + 'article/' + slug);
+  }
+
+  public getArticlesList(): Observable<ArticleResponse> {
+    return this.http.get(this.API_ARTICLES + 'list');
+  }
+
+  public resetPage(): void {
+    this.page = 0;
   }
 
 }

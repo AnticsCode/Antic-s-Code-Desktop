@@ -23,6 +23,7 @@ export class Storage {
   token: string = null;
   user: string = null;
   remember: boolean = STORAGE_CONSTANTS.REMEMBER;
+  theme: string = APP_CONSTANTS.THEME
 }
 
 export let STORAGE_CONFIG = new InjectionToken<StorageConfig>('storage.config');

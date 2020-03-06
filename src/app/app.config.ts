@@ -6,7 +6,7 @@ import { InjectionToken } from '@angular/core';
 const DEV = 'http://localhost:3000/';
 const PRE = 'http://192.168.1.97:3000/';
 const PROD = 'https://antics-code.herokuapp.com/';
-const APP_VERSION = '0.0.1';
+const APP_VERSION = '0.2.1';
 export const URI = 'https://anticscode.netlify.com';
 
 export interface AppConfig {

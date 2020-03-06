@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { LogoPipe } from './logo/logo.pipe';
+import { ImagePipe } from './image/image.pipe';
+import { SanitizerPipe } from './sanitizer/sanitizer.pipe';
+import { MediaIconPipe } from './media-icon/media-icon.pipe';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  declarations: [
+    ImagePipe,
+    LogoPipe,
+    SanitizerPipe,
+    MediaIconPipe
   ],
-  exports: []
+  exports: [
+    ImagePipe,
+    LogoPipe,
+    SanitizerPipe,
+    MediaIconPipe
+  ]
 })
 
 export class PipesModule { }

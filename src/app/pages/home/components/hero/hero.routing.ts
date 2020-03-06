@@ -2,11 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HeroComponent } from './hero.component';
+import { HeroContentComponent } from './components/hero-content/hero-content.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HeroComponent
+    component: HeroComponent,
+    children: [
+     {
+       path: '',
+       component: HeroContentComponent
+     }
+    ]
   }
 ];
 

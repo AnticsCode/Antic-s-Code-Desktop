@@ -1,0 +1,16 @@
+<div *ngIf="article">
+  <div class="template">
+    <app-article-header [article]="article"></app-article-header>
+    <markdown ngPreserveWhitespaces
+              [lineHighlight]="true"
+              [data]="article.message"
+              (ready)="onReady(article.message)">
+    </markdown>
+  </div>
+</div>
+
+<div class="flex" *ngIf="!article">
+  <div class="spinner">
+    <app-spinner></app-spinner>
+  </div>
+</div>

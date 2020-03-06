@@ -1,0 +1,25 @@
+<nb-list>
+  <nb-list-item *ngFor="let a of articles"
+                [routerLink]="'./article/' + a.slug"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+    <span class="title">{{ a.title }}</span>
+    <div class="info">
+      <div>
+        <img alt="logo" [src]="(a.category | logo) | image:'logos'">
+        <p>{{a.category}}</p>
+      </div>
+      <div class="views">
+        {{ a.views }}
+        <span><nb-icon icon="eye-outline" status="info"></nb-icon></span>
+      </div>
+      <div class="likes">
+        {{ a.likes }}
+        <span><nb-icon icon="heart-outline" status="danger"></nb-icon></span>
+      </div>
+    </div>
+    <div class="detail">
+      <nb-icon icon="arrow-ios-forward-outline"></nb-icon>
+    </div>
+  </nb-list-item>
+</nb-list>

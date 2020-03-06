@@ -1,5 +1,5 @@
 <div class="hero">
- <div class="container flex flex-column">
+ <div class="section flex flex-column">
    <div class="flex" id="intro">
       <img id="logo" src="assets/img/logo.png">
       <div class="welcome">
@@ -10,7 +10,7 @@
    <div class="login" *ngIf="login">  <!-- LOGIN -->
     <app-login-form></app-login-form>
    </div>
-   <div class="container-bottom">  <!-- LOADER -->
+   <div class="section-bottom" *ngIf="!login">  <!-- LOADER -->
     <app-loader (completed)="complete()"></app-loader>
   </div>
   <div class="no-account animated fadeIn" *ngIf="login">

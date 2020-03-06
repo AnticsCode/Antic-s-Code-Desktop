@@ -16,6 +16,9 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServicesModule } from './services/services.module';
 import { JwtInterceptor } from './services/http/jwt.interceptor';
+import { NgMarkdownModule } from './markdown/markdown.module';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   imports: [
@@ -23,6 +26,8 @@ import { JwtInterceptor } from './services/http/jwt.interceptor';
     StorageModule,
     ServicesModule,
     LanguageModule.forRoot(),
+    NgMarkdownModule,
+    ToastrModule.forRoot(),
     NgxWebstorageModule.forRoot(CORE_MODULE_CONSTANTS.WEBSTORAGE_CONFIG),
     TranslateModule.forRoot({
       loader: {

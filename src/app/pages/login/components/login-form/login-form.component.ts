@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { StorageService } from '@core/storage/storage.service';
 import { LoginService } from '@core/services/login/login.service';
 import { UserService } from '@core/services/user/user.service';
+import { CrafterService } from '@core/services/crafter/crafter.service';
+
 
 @Component({
   selector: 'app-login-form',
@@ -25,12 +27,12 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   constructor(private login: LoginService,
               private userService: UserService,
               private ls: StorageService,
-              private router: Router) { }
+              private router: Router,
+              private crafter: CrafterService) { }
 
   ngOnInit() {
     this.createSignInForm();
     this.rememberMe();
-    this.signIn('allison@anticscode.epizy.com', 'zebrahead');
   }
 
   onSubmit(): void {
@@ -50,8 +52,10 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         if (res.ok) { this.handleSignIn(res); }
       },
         (err: HttpErrorResponse) => {
+          this.crafter.toaster('Error de acceso',
+                               'Comprueba tus credenciales',
+                               'error');
           console.log(err);
-          this.loading = false;
       });
   }
 

@@ -83,7 +83,6 @@ interface UserProfile {
   avatar?: string;
   rol?: string;
   bio?: string;
-  facebook?: string;
   twitter?: string;
   github?: string;
   portfolio?: string;
@@ -94,6 +93,18 @@ export interface MenuItem {
   name: string;
   link: string;
   icon: string;
+}
+
+export interface HeaderAction {
+  icon: string;
+  link: string;
+  status?: string;
+}
+
+export interface SocialIcon {
+  name: string;
+  link?: string;
+  color: string;
 }
 
 export class CustomError {

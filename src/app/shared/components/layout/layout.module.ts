@@ -6,7 +6,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderModule } from './header/header.module';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,

@@ -1,6 +1,6 @@
 {
   "name": "antics-code-desktop",
-  "version": "0.0.1",
+  "version": "0.2.2",
   "description": "Antic's Code Desktop App",
   "author": "Sergio Martínez",
   "main": "main.js",
@@ -84,6 +84,8 @@
     "@nebular/eva-icons": "4.6.0",
     "@nebular/theme": "4.6.0",
     "eva-icons": "1.1.2",
-    "hammerjs": "2.0.8"
+    "hammerjs": "2.0.8",
+    "ngx-markdown": "8.2.2",
+    "ngx-toastr": "11.3.3"
   }
 }

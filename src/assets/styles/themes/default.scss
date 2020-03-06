@@ -2,3 +2,15 @@
 .nb-theme-default nb-sidebar .main-container {
   width: var(--sidebar-width) !important;
 }
+
+.nb-theme-default nb-layout.with-scroll .scrollable-container {
+  height: auto !important;
+}
+
+.nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
+  padding: 0 !important;
+}
+
+.nb-theme-default nb-sidebar .scrollable {
+  padding: 0 !important;
+}
