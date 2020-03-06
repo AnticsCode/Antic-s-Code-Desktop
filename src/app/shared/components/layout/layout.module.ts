@@ -5,6 +5,8 @@ import { SharedModule } from '@shared/shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderModule } from './header/header.module';
 import { RouterModule } from '@angular/router';
+import { DialogsModule } from './dialogs/dialogs.module';
+import { SnackbarsModule } from './snackbars/snackbars.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,16 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     HeaderModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    DialogsModule,
+    SnackbarsModule
   ],
   exports: [
     HeaderComponent,
     SidebarComponent,
-    HeaderModule
+    HeaderModule,
+    DialogsModule,
+    SnackbarsModule
   ]
 })
 

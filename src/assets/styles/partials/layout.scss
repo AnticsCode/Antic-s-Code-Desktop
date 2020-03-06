@@ -22,6 +22,22 @@
   width: 100%;
 }
 
+.index-content {
+  padding: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: auto;
+  width: var(--index-width);
+  max-width: var(--index-width);
+  height: calc(100vh - var(--navbar-height));
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+}
+
 .content {
   width: 100%;
   flex-grow: auto;

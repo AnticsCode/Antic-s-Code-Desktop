@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from '@shared/components/components.module';
 import { AppComponent } from './app.component';
 import { APP_CONFIG, APP_CONSTANTS } from './app.config';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,13 @@ import { APP_CONFIG, APP_CONSTANTS } from './app.config';
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    StoreModule.forRoot({}, {
+      runtimeChecks: {
+        strictStateImmutability: false,
+        strictActionImmutability: false
+      }
+    })
   ],
   providers: [{ provide: APP_CONFIG, useValue: APP_CONSTANTS}],
   bootstrap: [AppComponent]

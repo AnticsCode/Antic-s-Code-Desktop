@@ -3,7 +3,7 @@
             status="basic"
             (selectedChange)="changeTheme($event)">
    <nb-option *ngFor="let theme of themes"
-               [value]="theme">{{ theme | titlecase}}
+              [value]="theme">{{ theme | titlecase}}
    </nb-option>
  </nb-select>
 </div>

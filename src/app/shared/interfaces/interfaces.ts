@@ -3,7 +3,6 @@ interface Content {
   title?: string;
   category?: string;
   cover?: string;
-  code?: Code[];
   tags?: string[];
   badges?: string[];
   likes?: number;
@@ -16,20 +15,6 @@ interface ServerResponse {
   ok: boolean;
   message?: string;
   err?: any;
-}
-
-export interface Code {
-  code: string;
-  lang: string;
-  description: string;
-  level: string;
-  tags: string[];
-  from: From;
-}
-
-export interface From {
-  article: string;
-  slug: string;
 }
 
 export interface Index {
@@ -51,12 +36,6 @@ export interface Article extends Content {
   level?: string;
   views?: number;
   summary?: string;
-  draft?: boolean;
-  admin?: boolean;
-}
-
-interface Translation {
-  translate: string;
 }
 
 export interface UserResponse extends ServerResponse {
@@ -67,7 +46,9 @@ export interface UserResponse extends ServerResponse {
 
 export interface ArticleResponse extends ServerResponse {
   articles?: Article[];
+  article?: Article;
   page?: number;
+  draft?: Article;
 }
 
 export interface User {

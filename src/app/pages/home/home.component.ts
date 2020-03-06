@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NbMenuItem, NbThemeService } from '@nebular/theme';
+import { StorageService } from '@app/core/storage/storage.service';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'app-home',
@@ -9,33 +10,20 @@ import { NbMenuItem, NbThemeService } from '@nebular/theme';
 
 export class HomeComponent implements OnInit {
 
-  items: NbMenuItem[] = [
-    {
-      title: 'Home',
-      icon: 'home-outline',
-      link: '/home'
-    },
-    {
-      title: 'Perfil',
-      link: null,
-      icon: 'person-outline'
-    },
-    {
-      title: 'Artículos',
-      link: '/home/articles',
-      icon: 'archive-outline'
-    },
-    {
-      title: 'Favoritos',
-      link: null,
-      icon: 'star-outline'
-    }
-   ];
-
-  constructor(private theme: NbThemeService) { }
+  constructor(private ls: StorageService,
+              private _theme: NbThemeService) { }
 
   ngOnInit() {
-    this.theme.changeTheme('dark');
+    this.checkTheme();
+  }
+
+  private checkTheme(): void {
+    const t = this.ls.get('theme');
+    if (t) {
+      setTimeout(() => {
+        this._theme.changeTheme(t);
+      }, 100);
+    }
   }
 
 }

@@ -9,7 +9,6 @@ export class HeroIndexComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

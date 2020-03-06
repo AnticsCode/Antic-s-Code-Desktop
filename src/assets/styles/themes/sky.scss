@@ -1,0 +1,16 @@
+.nb-theme-sky nb-sidebar.expanded,
+.nb-theme-sky nb-sidebar .main-container {
+  width: var(--sidebar-width) !important;
+}
+
+.nb-theme-sky nb-layout.with-scroll .scrollable-container {
+  height: auto !important;
+}
+
+.nb-theme-sky nb-layout .layout .layout-container .content .columns nb-layout-column {
+  padding: 0 !important;
+}
+
+.nb-theme-sky nb-sidebar .scrollable {
+  padding: 0 !important;
+}

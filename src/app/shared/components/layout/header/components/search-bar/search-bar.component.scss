@@ -8,6 +8,10 @@
   .close {
     color: nb-theme(text-basic-color);
   }
+
+  .input::-webkit-input-placeholder {
+    color: nb-theme(text-basic-color);
+  }
 }
 
 .search-bar {

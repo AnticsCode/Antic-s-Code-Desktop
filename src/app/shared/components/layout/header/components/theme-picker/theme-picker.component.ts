@@ -19,16 +19,10 @@ export class ThemePickerComponent implements OnInit {
 
   ngOnInit() {
     this.selectedTheme = this.getTheme();
-    this.checkTheme();
   }
 
   private getTheme(): string {
     return this.ls.get('theme') || 'default';
-  }
-
-  private checkTheme(): void {
-    this.selectedTheme ? this._theme.changeTheme(this.selectedTheme)
-                       : this._theme.changeTheme(APP_CONSTANTS.THEME);
   }
 
   changeTheme(theme: string): void {

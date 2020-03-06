@@ -14,9 +14,9 @@ function createWindow(): BrowserWindow {
   let width = 1440;
   let height = 920;
 
-  if (size.width < 1440 || size.height < 920) {
+  if (size.width < 1280 || size.height < 720) {
     width = size.width;
-    height = size.height;
+    height = (size.height - 40);  // dock
   }
 
   // Create the browser window.

@@ -30,6 +30,9 @@ import { ArticleHeaderComponent } from './components/article-header/article-head
     ComponentsModule,
     SharedModule,
     MarkdownModule.forChild()
+  ],
+  exports: [
+    ArticleHeaderComponent
   ]
 })
 

@@ -3,8 +3,9 @@
  font-size: var(--primay-font-size);
 }
 
-.template {
+.hero {
   padding-left: 3rem !important;
+  padding-top: 1rem;
 }
 
 h1 {
@@ -15,6 +16,7 @@ h1 {
 
 h3 {
   margin-top: 3rem;
+  padding-right: 2rem;
   &::before {
     margin: 0;
     padding: 0;
@@ -30,6 +32,10 @@ h3 {
 
   & > div {
     padding-right: 3rem;
+
+    @media(max-width: 1280px) {
+      padding-right: 2rem;
+    }
 
     & h4 {
       margin-bottom: 1rem;

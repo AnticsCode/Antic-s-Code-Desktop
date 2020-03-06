@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
+import { CreateDraftGuard } from '@app/core/guards/create-draft.guard';
 
 const routes: Routes = [
   {
@@ -37,7 +38,13 @@ const routes: Routes = [
       {
         path: 'create',
         loadChildren: () => import('./components/create/create.module')
-                        .then(mod => mod.CreateModule), data: {name: 'Create'}
+                        .then(mod => mod.CreateModule), data: {name: 'Create'},
+        canActivate: [CreateDraftGuard]
+      },
+      {
+        path: 'create-form',
+        loadChildren: () => import('./components/create-form/create-form.module')
+                        .then(mod => mod.CreateFormModule), data: {name: 'Create Form'}
       },
       {
         path: 'profile',

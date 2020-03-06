@@ -1,0 +1,17 @@
+.markdown {
+  padding: 0;
+  margin: 0;
+
+  & textarea {
+    width: 100%;
+    height: 90vh;
+    resize: none;
+    padding-top: 1rem;
+    height: calc(100vh - var(--navbar-height));
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+  }
+}

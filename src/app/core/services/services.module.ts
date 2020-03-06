@@ -8,7 +8,8 @@ import {
   LoginService,
   UserService,
   ArticlesService,
-  CrafterService
+  CrafterService,
+  DraftsService
   } from './services.index';
 
 @NgModule({
@@ -22,7 +23,8 @@ import {
     LoginService,
     UserService,
     ArticlesService,
-    CrafterService
+    CrafterService,
+    DraftsService
   ]
 })
 

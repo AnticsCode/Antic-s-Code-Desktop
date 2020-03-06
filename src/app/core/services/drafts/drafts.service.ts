@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpService } from '../http/http.service';
+import { APP_CONSTANTS } from '@app/app.config';
+import { environment } from '@environments/environment';
+import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
+
+@Injectable()
+
+export class DraftsService {
+
+  readonly API_DRAFTS = APP_CONSTANTS.END_POINT + 'drafts/';
+
+  constructor(private http: HttpService) {
+      if (!environment.production) { console.log('DraftsService'); }
+  }
+
+  public getDrafts(): Observable<ArticleResponse> {
+    return this.http.get(this.API_DRAFTS);
+  }
+
+  public getDraftsByUser(): Observable<ArticleResponse> {
+    return this.http.get(this.API_DRAFTS + 'user');
+  }
+
+  public getDraftBySlug(slug: string): Observable<ArticleResponse> {
+    return this.http.get(this.API_DRAFTS + 'drafts/' + slug);
+  }
+
+  public createDraft(draft: Article): Observable<ArticleResponse> {
+    return this.http.post(this.API_DRAFTS, draft);
+  }
+
+  public updateDraftMessage(message: string, id: string): Observable<ArticleResponse> {
+    return this.http.put(this.API_DRAFTS + 'message/' + id, message);
+  }
+
+}

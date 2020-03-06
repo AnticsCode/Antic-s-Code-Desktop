@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from '@app/shared/interfaces/interfaces';
+import { MenuItems } from '@shared/shared.data';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,13 +9,7 @@ import { MenuItem } from '@app/shared/interfaces/interfaces';
 
 export class SidebarComponent implements OnInit {
 
-  items: MenuItem[] = [
-    { name: 'Home', link: '/home', icon: 'home-outline' },
-    { name: 'Noticias', link: './news', icon: 'cast-outline' },
-    { name: 'Artículos', link: './articles', icon: 'file-text-outline' },
-    { name: 'Escritores', link: './writers', icon: 'edit-2-outline' },
-    { name: 'Ayuda', link: './help', icon: 'question-mark-circle-outline' }
-  ];
+  items = MenuItems
 
   constructor() { }
 

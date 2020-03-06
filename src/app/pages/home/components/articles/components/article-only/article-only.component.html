@@ -2,7 +2,6 @@
   <div class="template">
     <app-article-header [article]="article"></app-article-header>
     <markdown ngPreserveWhitespaces
-              [lineHighlight]="true"
               [data]="article.message"
               (ready)="onReady(article.message)">
     </markdown>

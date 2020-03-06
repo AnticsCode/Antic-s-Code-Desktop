@@ -7,21 +7,19 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
+
+const modules = [
+  MatFormFieldModule, MatInputModule,
+  MatCheckboxModule, MatTooltipModule,
+  MatDialogModule, MatSnackBarModule,
+  MatMenuModule, MatTabsModule
+];
 
 @NgModule({
   declarations: [],
-  imports: [
-    MatFormFieldModule, MatInputModule,
-    MatCheckboxModule, MatTooltipModule,
-    MatDialogModule, MatSnackBarModule,
-    MatMenuModule,
-  ],
-  exports: [
-    MatFormFieldModule, MatInputModule,
-    MatCheckboxModule, MatTooltipModule,
-    MatDialogModule, MatSnackBarModule,
-    MatMenuModule
-  ]
+  imports: [...modules],
+  exports: [...modules]
 })
 
 export class MaterialModule { }

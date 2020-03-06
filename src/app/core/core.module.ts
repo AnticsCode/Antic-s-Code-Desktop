@@ -18,6 +18,11 @@ import { ServicesModule } from './services/services.module';
 import { JwtInterceptor } from './services/http/jwt.interceptor';
 import { NgMarkdownModule } from './markdown/markdown.module';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './ngrx/reducers/reducers.index';
+import { ArticleEffects } from './ngrx/effects/article.effects';
+
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -28,6 +33,10 @@ import { ToastrModule } from 'ngx-toastr';
     LanguageModule.forRoot(),
     NgMarkdownModule,
     ToastrModule.forRoot(),
+    StoreModule.forFeature('AppState', reducers),
+    EffectsModule.forRoot([
+      ArticleEffects,
+    ]),
     NgxWebstorageModule.forRoot(CORE_MODULE_CONSTANTS.WEBSTORAGE_CONFIG),
     TranslateModule.forRoot({
       loader: {

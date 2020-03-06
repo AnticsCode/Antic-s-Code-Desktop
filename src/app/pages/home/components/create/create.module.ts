@@ -6,6 +6,12 @@ import { CreateComponent } from './create.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { CreateContentComponent } from './components/create-content/create-content.component';
 import { CreateIndexComponent } from './components/create-index/create-index.component';
+import { NbInputModule } from '@nebular/theme';
+import { CreatorService } from './services/creator.service';
+import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from '@shared/components/components.module';
+import { ArticlesModule } from '../articles/articles.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,15 @@ import { CreateIndexComponent } from './components/create-index/create-index.com
   imports: [
     CommonModule,
     CreateRoutingModule,
-
+    NbInputModule,
+    MarkdownModule,
+    FormsModule,
+    ComponentsModule,
+    ArticlesModule,
+    SharedModule,
+  ],
+  providers: [
+    CreatorService
   ]
 })
 

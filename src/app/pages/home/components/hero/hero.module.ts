@@ -5,7 +5,7 @@ import { HeroRoutingModule } from './hero.routing';
 import { HeroComponent } from './hero.component';
 import { HeroIndexComponent } from './components/hero-index/hero-index.component';
 import { HeroContentComponent } from './components/hero-content/hero-content.component';
-import { NbIconModule } from '@nebular/theme';
+import { NbIconModule, NbDialogService, NbDialogModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { NbIconModule } from '@nebular/theme';
   imports: [
     CommonModule,
     HeroRoutingModule,
-    NbIconModule
+    NbIconModule,
+    NbDialogModule.forChild(),
   ]
 })
 

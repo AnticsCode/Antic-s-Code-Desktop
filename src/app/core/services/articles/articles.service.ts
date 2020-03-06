@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpService } from '../http/http.service';
 import { APP_CONSTANTS } from '@app/app.config';
 import { environment } from '@environments/environment';
-import { ArticleResponse } from '@app/shared/interfaces/interfaces';
+import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
 
 @Injectable()
 
@@ -31,6 +31,10 @@ export class ArticlesService {
 
   public getArticlesList(): Observable<ArticleResponse> {
     return this.http.get(this.API_ARTICLES + 'list');
+  }
+
+  public createArticle(article: Article): Observable<ArticleResponse> {
+    return this.http.post(this.API_ARTICLES, article);
   }
 
   public resetPage(): void {

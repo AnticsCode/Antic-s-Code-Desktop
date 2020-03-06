@@ -40,3 +40,9 @@ body {
   @include nb-theme-global();
 };
 
+@media(max-width: 1280px) {
+  * {
+    font-size: var(--primary-font-size-small);
+  }
+}
+
