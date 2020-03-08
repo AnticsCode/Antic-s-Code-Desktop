@@ -30,12 +30,14 @@ export interface Link {
 
 export interface Article extends Content {
   message?: string;
+  user?: string;
   author?: string;
   created?: string;
   slug?: string;
   level?: string;
   views?: number;
   summary?: string;
+  status?: string;
 }
 
 export interface UserResponse extends ServerResponse {
@@ -49,6 +51,7 @@ export interface ArticleResponse extends ServerResponse {
   article?: Article;
   page?: number;
   draft?: Article;
+  drafts?: Article[];
 }
 
 export interface User {
@@ -86,6 +89,11 @@ export interface SocialIcon {
   name: string;
   link?: string;
   color: string;
+}
+
+export interface StatusButton {
+  status: string;
+  name: string;
 }
 
 export class CustomError {

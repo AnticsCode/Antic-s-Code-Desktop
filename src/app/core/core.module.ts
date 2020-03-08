@@ -21,7 +21,7 @@ import { NgMarkdownModule } from './markdown/markdown.module';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './ngrx/reducers/reducers.index';
-import { ArticleEffects } from './ngrx/effects/article.effects';
+import { DraftEffects } from './ngrx/effects/draft.effects';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -35,7 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot(),
     StoreModule.forFeature('AppState', reducers),
     EffectsModule.forRoot([
-      ArticleEffects,
+      DraftEffects,
     ]),
     NgxWebstorageModule.forRoot(CORE_MODULE_CONSTANTS.WEBSTORAGE_CONFIG),
     TranslateModule.forRoot({

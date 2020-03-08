@@ -9,14 +9,15 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class CreateFormTabIntroComponent implements OnInit {
 
   @Output() start = new EventEmitter<void>();
-  accepted = false;
+  read = false;
+  content = false;
 
   constructor() { }
 
   ngOnInit() { }
 
   letsGo(): void {
-    if (!this.accepted) { return; }
+    if (!this.read || !this.content) { return; }
     this.start.emit();
   }
 

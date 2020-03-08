@@ -1,4 +1,4 @@
-import { SocialIcon, MenuItem } from "./interfaces/interfaces";
+import { SocialIcon, MenuItem, StatusButton } from "./interfaces/interfaces";
 
 export const SocialMedia: SocialIcon[] = [
   { name: 'github', color: 'basic' },
@@ -62,5 +62,12 @@ export const BADGES: string[] = [
   'Destacado',
   'Popular'
 ];
+
+export const StatusButtons: StatusButton[] = [
+  { status: 'warning', name: 'Draft' },
+  { status: 'danger', name: 'Pending'},
+  { status: 'info', name: 'Hidden' },
+  { status: 'basic', name: 'All' }
+]
 
 

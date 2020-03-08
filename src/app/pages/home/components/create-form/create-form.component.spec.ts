@@ -14,7 +14,7 @@ describe('CreateFormComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.CreateFormComponent(CreateFormComponent);
+    fixture = TestBed.createComponent(CreateFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

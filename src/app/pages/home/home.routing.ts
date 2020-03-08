@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { CreateDraftGuard } from '@app/core/guards/create-draft.guard';
+import { AdminGuard } from '@app/core/guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -45,6 +46,18 @@ const routes: Routes = [
         path: 'create-form',
         loadChildren: () => import('./components/create-form/create-form.module')
                         .then(mod => mod.CreateFormModule), data: {name: 'Create Form'}
+      },
+      {
+        path: 'create-confirm',
+        loadChildren: () => import('./components/create-confirm/create-confirm.module')
+                        .then(mod => mod.CreateConfirmModule), data: {name: 'Create Confirm'},
+        canActivate: [CreateDraftGuard]
+      },
+      {
+        path: 'admin',
+        loadChildren: () => import('./components/admin/admin.module')
+                        .then(mod => mod.AdminModule), data: {name: 'Admin'},
+        canActivate: [AdminGuard]
       },
       {
         path: 'profile',

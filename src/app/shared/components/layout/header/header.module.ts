@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { NbSelectModule, NbActionsModule, NbTooltipModule } from '@nebular/theme';
+import { NbSelectModule, NbActionsModule, NbTooltipModule, NbPopoverModule } from '@nebular/theme';
 import { ThemePickerComponent } from './components/theme-picker/theme-picker.component';
 import { HeaderActionsComponent } from './components/header-actions/header-actions.component';
 import { SharedModule } from '@shared/shared.module';
@@ -20,7 +20,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     NbActionsModule,
     NbTooltipModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    NbPopoverModule
   ],
   exports: [
     ThemePickerComponent,

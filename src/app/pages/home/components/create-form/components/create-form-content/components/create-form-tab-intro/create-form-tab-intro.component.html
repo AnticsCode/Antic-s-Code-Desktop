@@ -36,9 +36,14 @@
 </ul>
 
 <div class="check-box">
-  <mat-checkbox [(ngModel)]="accepted">
+  <mat-checkbox [(ngModel)]="read">
     <span>
       He leido y entendido que sé Markdown, además de saber lo suficiente sobre un tema como para escribir sobre él.
+    </span>
+  </mat-checkbox>
+  <mat-checkbox [(ngModel)]="content">
+    <span>
+      Acepto que si escribo contenido no permitido o inadecuado, mi contenido puede ser <span class="bold">borrado</span>.
     </span>
   </mat-checkbox>
 </div>
@@ -46,6 +51,6 @@
 <button nbButton
         status="danger"
         (click)="letsGo()"
-        [disabled]="!accepted">
+        [disabled]="!read || !content">
         Siguiente
 </button>

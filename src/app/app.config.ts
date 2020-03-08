@@ -2,16 +2,16 @@
 // application elements such as components or services.
 
 import { InjectionToken } from '@angular/core';
-import * as fromArticles from '@core/ngrx/reducers/article.reducer';
+import * as fromDrafts from '@app/core/ngrx/reducers/draft.reducer';
 
 const DEV = 'http://localhost:3000/';
 const PRE = 'http://192.168.1.97:3000/';
 const PROD = 'https://antics-code.herokuapp.com/';
-const APP_VERSION = '0.2.3';
+const APP_VERSION = '0.3.0';
 export const URI = 'https://anticscode.netlify.com';
 
 export interface AppState {
-  articles: fromArticles.ArticleState;
+  drafts: fromDrafts.DraftState;
 }
 
 export interface AppConfig {

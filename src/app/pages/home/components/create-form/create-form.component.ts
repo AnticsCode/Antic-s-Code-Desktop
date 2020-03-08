@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import * as fromArticles from '@core/ngrx/selectors/article.selectors';
+import * as fromArticles from '@app/core/ngrx/selectors/draft.selectors';
 import { Subject, of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/app.config';
-import { takeUntil, switchMap, mergeMap } from 'rxjs/operators';
-import { Article } from '@app/shared/interfaces/interfaces';
+import { takeUntil, switchMap } from 'rxjs/operators';
 import { LoadDraftComponent } from '@app/shared/components/layout/dialogs/load-draft/load-draft.component';
 import { NbDialogService } from '@nebular/theme';
 import { Router } from '@angular/router';
@@ -24,25 +23,20 @@ export class CreateFormComponent implements OnInit, OnDestroy {
               private router: Router) { }
 
   ngOnInit() {
-    this.getArticleDraft();
+    this.checkDraftDialog();
   }
 
-  private getArticleDraft(): void {
+  private checkDraftDialog(): void {
     this.store.select(fromArticles.getShowDraftSnack)
     .pipe(
       takeUntil(this.unsubscribe$),
-      mergeMap((res:boolean) => res ?
-                                this.store.select(fromArticles.getArticlesDrafts)
-                                : of(null)),
-      switchMap((res: Article) => {
+      switchMap((res: boolean) => {
         if (res) {
           const dialogRef = this.dialogService.open(LoadDraftComponent);
-          let instance = dialogRef.componentRef.instance;
-          instance.title = res.title
           return dialogRef.onClose;
         } else { return of(null); }
-     })
-    ).subscribe((res: boolean) => {
+     }))
+     .subscribe((res: boolean) => {
       if (res) {
         this.router.navigateByUrl('/home/create', { state: {loadDraft: true}})
       }

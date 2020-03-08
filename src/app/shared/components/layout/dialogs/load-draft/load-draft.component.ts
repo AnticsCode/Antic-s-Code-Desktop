@@ -8,8 +8,6 @@ import { NbDialogRef } from '@nebular/theme';
 })
 export class LoadDraftComponent implements OnInit {
 
-  title: string;
-
   constructor(protected dialogRef: NbDialogRef<LoadDraftComponent>) { }
 
   ngOnInit() { }

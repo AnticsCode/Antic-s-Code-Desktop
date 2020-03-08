@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/app.config';
 import { CATEGORIES, LANGUAGES, BADGES, LEVELS, TAGS } from '@app/shared/shared.data';
-import * as ArticleActions from '@core/ngrx/actions/article.actions';
+import * as DraftActions from '@app/core/ngrx/actions/draft.actions';
 import { DraftsService } from '@app/core/services/drafts/drafts.service';
 import { takeUntil } from 'rxjs/operators';
 
@@ -93,6 +93,7 @@ export class CreateFormTabSubmitComponent implements OnInit {
       const draft: Article = {
         title,
         author: this.user.name,
+        user: this.user._id,
         category,
         message: 'Aquí va el mensaje',
         cover,
@@ -106,7 +107,7 @@ export class CreateFormTabSubmitComponent implements OnInit {
       .pipe(takeUntil(this.unsubscribe$))
         .subscribe((res: ArticleResponse) => {
           if (res.ok) {
-            this.store.dispatch(ArticleActions.saveArticleDraft({draft: res.article}));
+            this.store.dispatch(DraftActions.saveDraft({draft: res.draft}));
             this.router.navigateByUrl('/home/create');
             this.crafter.toaster('Artículo guardado', 'Copia de seguridad', 'success')
           }

@@ -31,8 +31,12 @@ export class DraftsService {
     return this.http.post(this.API_DRAFTS, draft);
   }
 
+  public updateDraft(draft: Article): Observable<ArticleResponse> {
+    return this.http.put(this.API_DRAFTS, draft);
+  }
+
   public updateDraftMessage(message: string, id: string): Observable<ArticleResponse> {
-    return this.http.put(this.API_DRAFTS + 'message/' + id, message);
+    return this.http.put(this.API_DRAFTS + 'message/' + id, {message});
   }
 
 }

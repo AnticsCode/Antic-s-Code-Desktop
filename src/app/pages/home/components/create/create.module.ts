@@ -6,7 +6,7 @@ import { CreateComponent } from './create.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { CreateContentComponent } from './components/create-content/create-content.component';
 import { CreateIndexComponent } from './components/create-index/create-index.component';
-import { NbInputModule } from '@nebular/theme';
+import { NbInputModule, NbButtonModule } from '@nebular/theme';
 import { CreatorService } from './services/creator.service';
 import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from '@shared/components/components.module';
@@ -23,6 +23,7 @@ import { SharedModule } from '@app/shared/shared.module';
     CommonModule,
     CreateRoutingModule,
     NbInputModule,
+    NbButtonModule,
     MarkdownModule,
     FormsModule,
     ComponentsModule,

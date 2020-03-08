@@ -20,6 +20,10 @@
   }
 }
 
+.template {
+  height: calc(100% - var(--navbar-height));
+}
+
 .loading {
   position: absolute;
   bottom: calc(var(--navbar-height) + .6rem);

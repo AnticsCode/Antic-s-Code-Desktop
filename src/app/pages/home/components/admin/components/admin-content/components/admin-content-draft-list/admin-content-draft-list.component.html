@@ -1,0 +1,16 @@
+<div class="sort">
+  <button *ngFor="let b of buttons"
+          nbButton
+          outline
+          size="tiny"
+          (click)="sort(b.name)"
+          [status]="b.status">
+        {{ b.name }}
+  </button>
+</div>
+
+<div class="flex-column">
+  <app-admin-content-draft-card *ngFor="let draft of filteredDraftList"
+                                [draft]="draft">
+  </app-admin-content-draft-card>
+</div>
