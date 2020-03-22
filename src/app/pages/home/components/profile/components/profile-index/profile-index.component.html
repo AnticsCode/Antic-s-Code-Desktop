@@ -1,0 +1,34 @@
+<div class="profile index-content">
+  <div *ngIf="user">
+    <img [src]="user.profile?.avatar || 'assets/img/profile/no-photo.jpg'"
+          alt="Avatar" loading="lazy"/>
+    <h3>{{user.name}}</h3>
+    <p *ngIf="user.email">{{user.email}}</p>
+
+    <div class="profile-user" *ngIf="user.profile">
+      <button mat-button>
+        <span>{{ user.profile.language || 'Sin especificar' }}</span>
+      </button>
+
+      <h4 *ngIf="user.profile.rol">{{user.profile.rol | translate}}</h4>
+      <p *ngIf="user.profile.bio"
+         [innerHTML]="user.profile.bio | sanitizer: 'html'">
+      </p>
+      <p *ngIf="!user.profile.bio">Aún no tienes una presentación. Escribe una editando tu perfil.</p>
+    </div>
+
+    <div class="profile-social" *ngIf="user.profile">
+      <ul>
+        <li *ngFor="let i of icons">
+          <a [href]="user.profile[i.name]" target="_NEW"
+             [ngClass]="{'active': user.profile[i.name]}">
+            <nb-icon [icon]="(i.name | mediaIcon) + '-outline'"
+                     [status]="i.color">
+            </nb-icon>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

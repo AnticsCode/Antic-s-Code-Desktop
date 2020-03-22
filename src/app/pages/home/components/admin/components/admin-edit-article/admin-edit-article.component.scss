@@ -1,0 +1,135 @@
+@import '../../../../../../../assets/styles/themes/themes.scss';
+
+@include nb-install-component {
+  h5 {
+    color: nb-theme(color-basic-600);
+  }
+
+  .cards .card nb-icon {
+    color: nb-theme(color-basic-600);
+  }
+}
+
+*, *::before, *::after {
+  font-family: var(--primary-font) !important;
+  font-size: var(--primay-font-size);
+}
+
+.template {
+  padding-left: 3rem !important;
+  padding-top: 1rem;
+  height: calc(100% - var(--navbar-height));
+}
+
+.watch-button {
+  width: 46.5%;
+  margin: 2rem auto 1rem 0;
+  position: relative;
+  left: 3px;
+  display: block;
+}
+
+.save-button {
+  width: 49.5%;
+  margin: 1rem 1.75rem 0 auto;
+  position: relative;
+  right: 3px;
+  display: block;
+}
+
+.cards {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  & .card {
+    position: relative;
+    box-sizing: border-box;
+
+    &:hover h4::after {
+      width: 2rem;
+    }
+
+    & nb-icon {
+      position: absolute;
+      left: 1rem;
+      margin-top: 3px;
+      font-size: 1.7rem;
+    }
+
+    & h4 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding-left: 2.5rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        background: var(--primary-color);
+        height: .3rem;
+        left: 2.5rem;
+        bottom: 0;
+        border-radius: 4px;
+        transition: all .5s ease;
+      }
+    }
+
+    & p {
+      margin: 0 0 1rem 0;
+
+      &:last-of-type {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    & .example {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    & .tag {
+      padding-right: 1rem
+    }
+
+    & .checkbox {
+      margin-top: 1.666rem;
+    }
+
+    & .input-group {
+      margin: 3.333rem auto 0 auto;
+      position: relative;
+
+      & mat-label {
+        position: absolute;
+        left: .3rem;
+        top: -1.77rem;
+        font-size: .9rem;
+        filter: brightness(.7);
+      }
+
+      & input {
+        width: 100%;
+      }
+    }
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+  &::before {
+    margin: 0;
+    padding: 0;
+  }
+}

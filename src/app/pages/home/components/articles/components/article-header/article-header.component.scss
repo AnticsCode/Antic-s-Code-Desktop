@@ -1,0 +1,51 @@
+.header {
+  width: 100%;
+  display: flex;
+
+  & img {
+    width: 425px;
+    height: 239.13px;
+  }
+
+  & .info {
+    position: relative;
+    height: calc(265px + 2rem);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & h4 {
+      font-size: 3rem;
+      line-height: 3rem;
+      padding-right: 2rem;
+      text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                   0px 8px 13px rgba(0,0,0,0.1),
+                   0px 18px 23px rgba(0,0,0,0.1);
+    }
+
+    & .bottom {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      left: 2rem;
+      bottom: 2rem;
+
+      & .author {
+        display: flex;
+        align-items: center;
+        margin-left: 3rem;
+
+        & nb-icon {
+          margin-left: 1.5rem;
+          margin-right: .5rem;
+        }
+      }
+    }
+  }
+}
+
+.bold {
+  color: var(--primary-color);
+}

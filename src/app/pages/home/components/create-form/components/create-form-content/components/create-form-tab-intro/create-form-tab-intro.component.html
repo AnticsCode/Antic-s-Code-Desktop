@@ -1,0 +1,56 @@
+<h1>Empieza tu Aventura</h1>
+<h3>Desde aquí podrás crear contenido para Antic's Code. <br>
+  ¡Es muy sencillo, introduce los datos, escribe el artículo y listo!
+</h3>
+
+<h5>Antes de empezar, vamos a darte algunos consejos a seguir para
+  crear Artículos de calidad.
+</h5>
+
+<ul>
+  <li>
+    <nb-icon icon="arrow-right-outline"></nb-icon>
+    Es <span class="bold">inprescindible</span> que sepas Markdown ya que los Artículos
+    están escritos en este formato.
+  </li>
+  <li>
+    <nb-icon icon="arrow-right-outline"></nb-icon>
+    Si vas a escribir un Artículo damos por hecho que estás familiarizado con lo vas a decir
+    y por lo tanto el Artículo debería ser <strong>ameno</strong>, no muy largo y fácil de entender para llegar al
+    máximo público posible.
+  </li>
+  <li>
+    <nb-icon icon="arrow-right-outline"></nb-icon>
+    No vamos a corregir la gramática del Artículo, por eso intenta escribir el Artículo lo mejor que puedas.
+    El equipo de moderación si puede mirar que no haya contenido inadecuado.
+  </li>
+  <li>
+    <nb-icon icon="arrow-right-outline"></nb-icon>
+    Si quieres escribir buenos Artículos, recuerda utilizar todo lo que Markdown ofrece. Listas, citas, bloques de código.
+    Además es importante saber en que orden usar estos elementos.
+  </li>
+  <li>
+    <nb-icon icon="arrow-right-outline"></nb-icon>
+    Recuerda que puedes obtener inspiración de Artículos creados por moderadores.
+  </li>
+</ul>
+
+<div class="check-box">
+  <mat-checkbox [(ngModel)]="read">
+    <span>
+      He leido y entendido que sé Markdown, además de saber lo suficiente sobre un tema como para escribir sobre él.
+    </span>
+  </mat-checkbox>
+  <mat-checkbox [(ngModel)]="content">
+    <span>
+      Acepto que si escribo contenido no permitido o inadecuado, mi contenido puede ser <span class="bold">borrado</span>.
+    </span>
+  </mat-checkbox>
+</div>
+
+<button nbButton
+        status="danger"
+        (click)="letsGo()"
+        [disabled]="!read || !content">
+        Siguiente
+</button>

@@ -1,0 +1,42 @@
+<div class="index-content"
+     *ngIf="(draft$ | async) as draft">
+  <h3>Tu Artículo</h3>
+  <ul>
+    <li>
+      <img [src]="draft.cover"
+           class="cover"
+           #img
+           (error)="img.src = 'assets/img/no-image.png'; img.alt='No Image'"/>
+    </li>
+    <li>
+      <span>Título</span>
+      <p class="grey">{{ draft.title }}</p>
+    </li>
+    <li>
+      <span>Categoría</span>
+      <img alt="logo"
+           loading="lazy"
+           [src]="(draft.category | logo) | image:'logos'"
+           class="category">
+    </li>
+    <li>
+      <span>Etiquetas</span>
+      <p class="grey">
+        <em *ngFor="let t of draft.tags" class="grey">
+          {{ t }} &nbsp;
+        </em>
+      </p>
+    </li>
+    <li>
+      <span>Nivel</span>
+      <p class="grey">{{ draft.level }}</p>
+    </li>
+    <li>
+      <span>Introducción</span>
+        <markdown ngPreserveWhitespaces
+                  [data]="draft.summary"
+                  class="grey">
+        </markdown>
+    </li>
+  </ul>
+</div>

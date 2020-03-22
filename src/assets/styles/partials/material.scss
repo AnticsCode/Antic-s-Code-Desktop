@@ -1,0 +1,25 @@
+.search-bar .mat-form-field-appearance-legacy .mat-form-field-label {
+  top: 1.2em !important;
+  left: 1.2em !important;
+}
+
+.search-bar .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding-left: 10px !important;
+}
+
+.search-bar .mat-form-field-appearance-legacy .mat-form-field-underline {
+  display: none !important;
+}
+
+.header-less-tabs.mat-tab-group .mat-tab-header {
+  display: none !important;
+}
+
+.mat-tab-body-content {
+  overflow: initial !important;
+}
+
+.mat-tab-body {
+  height: 100% !important;
+  padding-left: 3rem;
+}

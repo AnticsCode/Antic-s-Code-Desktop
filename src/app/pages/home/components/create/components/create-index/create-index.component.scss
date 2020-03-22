@@ -1,0 +1,26 @@
+.markdown {
+  padding: 0;
+  margin: 0;
+  height: calc(100vh - var(--navbar-height));
+  position: relative;
+
+  & textarea {
+    width: 100%;
+    resize: none;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: calc(90% + 2.4rem);
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+  }
+
+  & button {
+    position: absolute;
+    width: var(--index-width);
+    bottom: 0;
+    left: 0;
+  }
+}

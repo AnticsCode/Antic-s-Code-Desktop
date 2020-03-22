@@ -1,0 +1,29 @@
+form {
+  margin-top: 10rem;
+  margin-left: 1.5rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-top: 2.222rem;
+  padding: .3rem;
+  cursor: pointer;
+  border-radius: 4px;
+  height: 2.666rem;
+  outline: none;
+
+  & span {
+    position: relative;
+    top: -2px;
+  }
+}
+
+mat-checkbox {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

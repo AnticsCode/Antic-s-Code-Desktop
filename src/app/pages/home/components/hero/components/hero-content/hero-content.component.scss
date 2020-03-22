@@ -1,0 +1,96 @@
+*, *::before, *::after {
+ font-family: var(--primary-font) !important;
+ font-size: var(--primay-font-size);
+}
+
+.hero {
+  padding-left: 3rem !important;
+  padding-top: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 3rem;
+  padding-right: 2rem;
+  &::before {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.steps {
+  width: 100%;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 4rem auto 4rem;
+
+  & > div {
+    padding-right: 3rem;
+
+    @media(max-width: 1280px) {
+      padding-right: 2rem;
+    }
+
+    & h4 {
+      margin-bottom: 1rem;
+      position: relative;
+
+      & nb-icon {
+        color: var(--primary-color);
+        font-size: 2rem;
+        position: relative;
+        left: 14px;
+        top: 4px;
+      }
+    }
+  }
+}
+
+.picture {
+  display: flex;
+
+  & img {
+    margin: 0;
+    width: 265px;
+    height: 170px;
+    filter: brightness(.7);
+  }
+
+  & h4 {
+    flex: 2;
+    margin-top: -3px;
+    margin-left: 3rem;
+    font-size: 1.4rem;
+  }
+
+  & ul {
+    margin-left: 28px;
+    margin-top: 1.3rem;
+    list-style: none;
+
+    & li nb-icon {
+      position: relative;
+      top: 1px;
+      margin-right: .4rem;
+    }
+  }
+
+}
+
+hr {
+  margin-top: 3.5rem;
+}
+
+.version {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  font-size: .7rem;
+  font-weight: 100;
+}

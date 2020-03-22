@@ -1,0 +1,26 @@
+<div class="profile-content template">
+  <h1>Bienvenido/a a tu perfil</h1>
+  <h3>Aquí podrás hacer el seguimiento de tu contenido</h3>
+
+  <div class="sort">
+    <button *ngFor="let b of buttons"
+            nbButton
+            outline
+            size="tiny"
+            (click)="sort(b.name)"
+            [status]="b.status">
+          {{ b.name }}
+    </button>
+  </div>
+
+  <div class="flex-column">
+    <app-draft-card *ngFor="let draft of filteredResult"
+                    [draft]="draft"
+                    (click)="navigate(draft)">
+    </app-draft-card>
+  </div>
+
+  <div *ngIf="filteredResult.length === 0">
+    <p>No se han encontrado resultados</p>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="markdown">
+  <textarea nbInput
+            fullWidth
+            placeholder="Empieza a escribir Markdown aquí..."
+            [(ngModel)]="markdown"
+            (ngModelChange)="change($event)">
+  </textarea>
+
+  <button nbButton
+          status="danger"
+          (click)="goNext()"
+          [disabled]="markdown.length < 20">
+          Siguiente
+  </button>
+</div>

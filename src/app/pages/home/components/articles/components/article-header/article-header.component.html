@@ -1,0 +1,18 @@
+<div class="header" *ngIf="article">
+  <img #img
+       [src]="article.cover"
+       (error)="img.src = 'assets/img/no-image.png'; img.alt='No Image'"
+       alt="Article Image"/>
+  <div class="info">
+    <h4>{{article.title}}</h4>
+    <div class="bottom">
+      <span>Creado el {{article.created}}</span>
+      <div class="author">
+        <span>
+          Escrito por
+          <span class="bold">{{article.author}}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

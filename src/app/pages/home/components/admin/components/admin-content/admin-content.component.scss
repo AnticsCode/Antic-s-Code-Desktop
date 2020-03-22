@@ -1,0 +1,25 @@
+*, *::before, *::after {
+  font-family: var(--primary-font) !important;
+  font-size: var(--primay-font-size);
+ }
+
+ .admin {
+   padding-left: 3rem !important;
+   padding-top: 1rem;
+   height: calc(100vh - var(--navbar-height));
+ }
+
+ h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin: 3rem auto;
+  padding-right: 2rem;
+  &::before {
+    margin: 0;
+    padding: 0;
+  }
+}

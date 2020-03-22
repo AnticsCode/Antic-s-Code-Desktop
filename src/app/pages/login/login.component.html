@@ -1,0 +1,22 @@
+<div class="hero">
+ <div class="section flex flex-column">
+   <div class="flex" id="intro">
+      <img id="logo" src="assets/img/logo.png">
+      <div class="welcome">
+        <h2>Antic's Code Desktop</h2>
+        <p>Bienvenido/a al creador de contenido. Tu aventura empieza aquí.</p>
+      </div>
+   </div>
+   <div class="login" *ngIf="login">  <!-- LOGIN -->
+    <app-login-form></app-login-form>
+   </div>
+   <div class="section-bottom" *ngIf="!login">  <!-- LOADER -->
+    <app-loader (completed)="complete()"></app-loader>
+  </div>
+  <div class="no-account animated fadeIn" *ngIf="login">
+    <p>¿No tienes cuenta? Crea una en
+      <a href="https://anticscode.netlify.com/home" target="_NEW">Antic's Code</a>
+    </p>
+  </div>
+ </div>
+</div>

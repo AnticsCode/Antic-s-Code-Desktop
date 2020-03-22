@@ -1,0 +1,21 @@
+<div class="sort">
+  <button *ngFor="let b of buttons"
+          nbButton
+          outline
+          size="tiny"
+          (click)="sort(b.name)"
+          [status]="b.status">
+        {{ b.name }}
+  </button>
+</div>
+
+<div class="flex-column">
+  <app-draft-card *ngFor="let draft of filteredDrafts"
+                  [draft]="draft"
+                  (click)="navigate(draft.slug)">
+  </app-draft-card>
+</div>
+
+<div *ngIf="filteredDrafts.length === 0">
+  <p>No se han encontrado resultados</p>
+</div>

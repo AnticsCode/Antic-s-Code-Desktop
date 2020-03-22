@@ -1,0 +1,38 @@
+*, *::before, *::after {
+  font-family: var(--primary-font) !important;
+  font-size: var(--primay-font-size);
+  }
+
+.profile-content {
+  padding-left: 3rem !important;
+  padding-top: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin: 3rem auto;
+  padding-right: 2rem;
+  &::before {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.sort {
+  display: flex;
+  margin-bottom: 1.5rem;
+
+  & button {
+    margin-right: 1rem;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 2rem !important;
+}
