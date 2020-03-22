@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItems } from '@shared/shared.data';
+import { MENUITEMS } from '@shared/shared.data';
 import { UserService } from '@app/core/services/services.index';
 import { User } from '@app/shared/interfaces/interfaces';
 
@@ -11,7 +11,7 @@ import { User } from '@app/shared/interfaces/interfaces';
 
 export class SidebarComponent implements OnInit {
 
-  items = MenuItems
+  items = MENUITEMS
   user: User;
 
   constructor(public _user: UserService) { }

@@ -38,6 +38,7 @@ export interface Article extends Content {
   views?: number;
   summary?: string;
   status?: string;
+  check?: Check;
 }
 
 export interface UserResponse extends ServerResponse {
@@ -63,7 +64,7 @@ export interface User {
   profile?: UserProfile;
 }
 
-interface UserProfile {
+export interface UserProfile {
   avatar?: string;
   rol?: string;
   bio?: string;
@@ -94,6 +95,29 @@ export interface SocialIcon {
 export interface StatusButton {
   status: string;
   name: string;
+}
+
+export interface Check {
+  hasGoodTitle?: CheckStatus;
+  hasGoodCategory?: CheckStatus;
+  hasGoodTags?: CheckStatus;
+  hasGoodBadges?: CheckStatus;
+  hasGoodLevel?: CheckStatus;
+  hasGoodLinks?: CheckStatus;
+  hasGoodCover?: CheckStatus;
+  hasGoodSummary?: CheckStatus;
+  hasGoodMessage?: CheckStatus;
+}
+
+export interface CheckStatus {
+  ok?: boolean;
+  cause?: string;
+}
+
+export interface CheckStatusList {
+  name: string;
+  hint: string;
+  icon: string;
 }
 
 export class CustomError {

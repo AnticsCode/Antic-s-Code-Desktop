@@ -7,6 +7,7 @@ import { CreateConfirmIndexComponent } from './components/create-confirm-index/c
 import { CreateConfirmContentComponent } from './components/create-confirm-content/create-confirm-content.component';
 import { CreateConfirmComponent } from './create-confirm.component';
 import { NbPopoverModule, NbInputModule, NbButtonModule } from '@nebular/theme';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NbPopoverModule, NbInputModule, NbButtonModule } from '@nebular/theme';
     CreateConfirmRoutingModule,
     NbPopoverModule,
     NbButtonModule,
-    NbInputModule
+    NbInputModule,
+    MarkdownModule.forChild()
   ]
 })
 

@@ -7,8 +7,12 @@ import { SharedModule } from '@app/shared/shared.module';
 import { AdminIndexComponent } from './components/admin-index/admin-index.component';
 import { AdminContentComponent } from './components/admin-content/admin-content.component';
 import { AdminContentDraftListComponent } from './components/admin-content/components/admin-content-draft-list/admin-content-draft-list.component';
-import { AdminContentDraftCardComponent } from './components/admin-content/components/admin-content-draft-card/admin-content-draft-card.component';
-import { NbButtonModule } from '@nebular/theme';
+import { NbButtonModule, NbCheckboxModule, NbInputModule } from '@nebular/theme';
+import { LayoutModule } from '@shared/components/layout/layout.module';
+import { AdminEditArticleComponent } from './components/admin-edit-article/admin-edit-article.component';
+import { AdminPreviewArticleComponent } from './components/admin-preview-article/admin-preview-article.component';
+import { MarkdownModule } from 'ngx-markdown';
+import { ArticlesModule } from '@app/pages/home/components/articles/articles.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,19 @@ import { NbButtonModule } from '@nebular/theme';
     AdminIndexComponent,
     AdminContentComponent,
     AdminContentDraftListComponent,
-    AdminContentDraftCardComponent
+    AdminEditArticleComponent,
+    AdminPreviewArticleComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     AdminRoutingModule,
-    NbButtonModule
+    NbButtonModule,
+    LayoutModule,
+    MarkdownModule.forChild(),
+    ArticlesModule,
+    NbCheckboxModule,
+    NbInputModule
   ]
 })
 

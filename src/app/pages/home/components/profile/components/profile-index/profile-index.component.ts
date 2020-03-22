@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '@app/shared/interfaces/interfaces';
-import { SocialMedia } from '@app/shared/shared.data';
+import { SOCIALMEDIA } from '@app/shared/shared.data';
 
 @Component({
   selector: 'app-profile-index',
@@ -11,7 +11,7 @@ import { SocialMedia } from '@app/shared/shared.data';
 export class ProfileIndexComponent implements OnInit {
 
   @Input() user: User;
-  icons = SocialMedia;
+  icons = SOCIALMEDIA;
 
   constructor() { }
 

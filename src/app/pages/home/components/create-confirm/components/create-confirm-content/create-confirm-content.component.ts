@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Article, ArticleResponse } from '@app/shared/interfaces/interfaces';
+import { Article, ArticleResponse, Link } from '@app/shared/interfaces/interfaces';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/app.config';
 import * as fromDrafts from '@app/core/ngrx/selectors/draft.selectors';
@@ -20,8 +20,8 @@ export class CreateConfirmContentComponent implements OnInit, OnDestroy {
 
   draft: Article;
   inputs: number[] = [0, 1];
-  name: string[] = ['', null];
-  link: string[] = ['', null];
+  name: string[] = ['', ''];
+  link: string[] = ['', ''];
   private unsubscribe$ = new Subject<void>();
 
   constructor(private store: Store<AppState>,
@@ -39,8 +39,48 @@ export class CreateConfirmContentComponent implements OnInit, OnDestroy {
      .subscribe((res: Article) => {
        if (res) {
          this.draft = res;
+         this.checkDraftLinks();
        }
      })
+  }
+
+  submit(): void {
+    this.insertLinks();
+    if (this.draft.status === 'Approved') {
+      this._draft.unPublishDraft(this.draft)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((res: ArticleResponse) => {
+        if (res.ok) {
+          this.store.dispatch(DraftActions.removeDraft());
+          this.crafter.toaster('Artículo archivado', `Tu Artículo ha pasado a
+                                                      pendiente hasta que un moderador
+                                                      revise los cambios`, 'info');
+          this.router.navigateByUrl('/home');
+        }
+      });
+    } else {
+      this._draft.updateDraft(this.draft)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((res: ArticleResponse) => {
+        if (res.ok) {
+          this.store.dispatch(DraftActions.removeDraft());
+          this.crafter.toaster('Artículo actualizado', '¡Genial!', 'success');
+          this.router.navigateByUrl('/home');
+        }
+      });
+    }
+  }
+
+  private insertLinks(): void {
+    this.draft.links = [];
+    this.inputs.forEach(i => {
+      if(this.name[i] && this.link[i]) {
+        this.draft.links.push({
+          name: this.name[i],
+          url: this.link[i]
+        });
+      }
+    });
   }
 
   addLink(): void {
@@ -50,33 +90,17 @@ export class CreateConfirmContentComponent implements OnInit, OnDestroy {
 
   removeLink(): void {
     this.inputs.splice(this.inputs.length -1, 1);
-    this.name[1] = null;
-    this.link[1] = null
+    this.name[1] = '';
+    this.link[1] = ''
   }
 
-  submit(): void {
-    this.insertLinks();
-    this._draft.updateDraft(this.draft)
-    .pipe(takeUntil(this.unsubscribe$))
-    .subscribe((res: ArticleResponse) => {
-      if (res.ok) {
-        this.store.dispatch(DraftActions.removeDraft());
-        this.store.dispatch(DraftActions.showDraftDialog({ show: false }));
-        this.crafter.toaster('Artículo creado', '¡Felicidades!', 'success');
-        this.router.navigateByUrl('/home');
-      }
-    })
-  }
-
-  private insertLinks(): void {
-    this.inputs.forEach(i => {
-      if(this.name[i] && this.link[i]) {
-        this.draft.links.push({
-          name: this.name[i],
-          url: this.link[i]
-        });
-      }
-    });
+  private checkDraftLinks(): void {
+    if (this.draft.links.length > 0) {
+      this.draft.links.forEach((link: Link, i) => {
+        this.name[i] = link.name;
+        this.link[i] = link.url;
+      });
+    }
   }
 
   ngOnDestroy(): void {

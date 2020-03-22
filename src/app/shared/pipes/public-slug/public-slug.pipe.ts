@@ -8,5 +8,6 @@ export class PublicSlugPipe implements PipeTransform {
     if (value) {
       return `${URI}/article/${value}`
     }
+    return value;
   }
 }

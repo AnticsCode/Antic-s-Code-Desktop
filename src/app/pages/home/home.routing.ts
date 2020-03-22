@@ -63,6 +63,11 @@ const routes: Routes = [
         path: 'profile',
         loadChildren: () => import('./components/profile/profile.module')
                         .then(mod => mod.ProfileModule), data: {name: 'Profile'}
+      },
+      {
+        path: 'single-article',
+        loadChildren: () => import('./components/single-article/single-article.module')
+                        .then(mod => mod.SingleArticleModule), data: {name: 'Single Article'}
       }
     ]
   },

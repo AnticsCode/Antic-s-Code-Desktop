@@ -29,7 +29,8 @@
              placeholder="Título del enlace"
              nbInput
              [(ngModel)]="name[input]"
-             fullWidth>
+             fullWidth
+             [ngClass]="{'valid': name[input].length >= 5}">
     </div>
     <div class="input-group">
       <mat-label>Dirección URL</mat-label>
@@ -42,7 +43,9 @@
              placeholder="Dirección URL"
              nbInput
              [(ngModel)]="link[input]"
-             fullWidth>
+             fullWidth
+             [ngClass]="{'invalid': name[input].length > 0 && link[input].length === 0,
+                         'valid': name[input].length >= 5 && link[input].length >= 5}">
     </div>
   </div>
 
@@ -50,8 +53,10 @@
 
   <button nbButton
           status="danger"
-          (click)="submit()">
-      Siguiente
+          (click)="submit()"
+          [disabled]="(name[0].length > 0 && link[0].length < 5) ||
+                      (name[1].length > 0 && link[1].length < 5)">
+      Crear
   </button>
 </div>
 

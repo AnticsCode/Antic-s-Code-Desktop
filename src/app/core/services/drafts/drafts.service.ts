@@ -19,12 +19,12 @@ export class DraftsService {
     return this.http.get(this.API_DRAFTS);
   }
 
-  public getDraftsByUser(): Observable<ArticleResponse> {
-    return this.http.get(this.API_DRAFTS + 'user');
+  public getDraftsByUser(sort: string = 'any'): Observable<ArticleResponse> {
+    return this.http.get(this.API_DRAFTS + 'user' + '?sort=' + sort);
   }
 
   public getDraftBySlug(slug: string): Observable<ArticleResponse> {
-    return this.http.get(this.API_DRAFTS + 'drafts/' + slug);
+    return this.http.get(this.API_DRAFTS + slug);
   }
 
   public createDraft(draft: Article): Observable<ArticleResponse> {
@@ -37,6 +37,14 @@ export class DraftsService {
 
   public updateDraftMessage(message: string, id: string): Observable<ArticleResponse> {
     return this.http.put(this.API_DRAFTS + 'message/' + id, {message});
+  }
+
+  public publishDraft(draft: Article): Observable<ArticleResponse> {
+    return this.http.post(this.API_DRAFTS + 'publish', draft);
+  }
+
+  public unPublishDraft(draft: Article): Observable<ArticleResponse> {
+    return this.http.post(this.API_DRAFTS + 'unpublish', draft);
   }
 
 }

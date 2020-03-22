@@ -1,0 +1,9 @@
+<div class="template animated fadeIn" *ngIf="draft">
+  <nb-icon class="close" icon="close-outline" (click)="goBack()"></nb-icon>
+
+  <app-article-header [article]="draft"></app-article-header>
+  <markdown ngPreserveWhitespaces
+            class="markdown"
+            [data]="draft.message">
+  </markdown>
+</div>

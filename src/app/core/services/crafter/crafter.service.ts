@@ -22,7 +22,7 @@ export class CrafterService {
     message = this.translate(message);
     return this.toastr[action](message, title, {
       timeOut: 5000,
-      positionClass: 'toast-top-right'
+      positionClass: 'toast-bottom-right'
     });
   }
 

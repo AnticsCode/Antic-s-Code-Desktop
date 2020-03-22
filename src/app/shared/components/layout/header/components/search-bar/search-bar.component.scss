@@ -9,7 +9,7 @@
     color: nb-theme(text-basic-color);
   }
 
-  .input::-webkit-input-placeholder {
+  .search-bar mat-label {
     color: nb-theme(text-basic-color);
   }
 }
@@ -50,6 +50,10 @@
     top: 1rem;
     cursor: pointer;
   }
+}
+
+.search-bar .mat-focused mat-label {
+  color: var(--primary-color) !important;
 }
 
 .backdrop {

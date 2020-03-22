@@ -29,10 +29,6 @@ export class UserService {
     this.user = user;
   }
 
-  public updateUser(user: User): Observable<UserResponse> {
-    return this.http.put(this.API_USERS, user);
-  }
-
   public getUserById(id: string): Observable<UserResponse> {
     return this.http.get(this.API_USERS + `/${id}`);
   }
@@ -48,13 +44,15 @@ export class UserService {
         if (res.ok) {
           this.user = res.user;
           return res;
-        }
+        } else { this.logout(); }
     }));
   }
 
   public logout(): void {
     this.ls.setKey('token', null);
     this.user = null;
+    document.body.removeAttribute('class'); // Remove Theme
+    document.body.removeAttribute('style');
   }
 
 }

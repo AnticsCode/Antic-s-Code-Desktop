@@ -1,0 +1,29 @@
+<div *ngIf="draft">
+  <div class="template">
+    <app-article-header [article]="draft"></app-article-header>
+    <h3>Información del Artículo</h3>
+    <p>
+      Los Artículos deben cumplir una serie de <strong>condiciones</strong> para que
+      puedan estar en vivo. Los moderadores revisarán los Artículos y darán el visto bueno.
+      Esto significa que tu Artículo debe cumplir el <span class="success">100%</span>
+      para que pueda publicarse. Una vez en este punto tu Artículo estará disponible para todo el mundo.
+    </p>
+    <p>
+      No te preocupes si crees que tienes un dato del Artículo escrito correctamente y aparece
+      en rojo en la lista de condiciones, es posible que los moderadores no hayan visto aún tus cambios.
+    </p>
+    <p>
+      Cuando tu Artículo llegue al <span class="success">100%</span> te avisaremos y en unos días estará
+      publicado para todo el mundo. Dependiento de la disponibilidad de los moderadores, este proceso
+      puede llegar a ser instantáneo.
+    </p>
+    <button nbButton
+            status="danger"
+            type="submit"
+            [routerLink]="'./edit'">
+            Siguiente
+    </button>
+  </div>
+</div>
+
+

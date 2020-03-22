@@ -1,7 +1,7 @@
 import { props, createAction } from '@ngrx/store';
 import { Article } from '@app/shared/interfaces/interfaces';
 
-// GET DRAFTS
+// GET DRAFT
 export const getDraft =
   createAction('[Drafts API] Get Draft');
 
@@ -11,6 +11,18 @@ export const getDraftSuccess =
 
 export const getDraftFailure =
   createAction('[Drafts API] Get Draft Failure',
+  props<{ error: string }>());
+
+// GET PREVIEW ARTICLE
+export const getPreviewArticle =
+  createAction('[Drafts API] Get Preview Article');
+
+export const getPreviewArticleSuccess =
+  createAction('[Drafts API] Get Preview Article Success',
+  props<{ article: Article }>());
+
+export const getPreviewArticleFailure =
+  createAction('[Drafts API] Get Preview Article Failure',
   props<{ error: string }>());
 
 // SHOW DRAFT DIALOG
@@ -38,6 +50,19 @@ export const saveDraftSuccess =
 export const saveDraftFailure =
   createAction('[Drafts API] Save Draft Failure',
   props<{ error: string }>());
+
+// SAVE PREVIEW ARTICLE
+export const savePreviewArticle =
+createAction('[Drafts API] Save Preview Article',
+props<{ article: Article }>());
+
+export const savePreviewArticleSuccess =
+createAction('[Drafts API] Save Preview Article Success',
+props<{ article: Article }>());
+
+export const savePreviewArticleFailure =
+createAction('[Drafts API] Save Preview Article Failure',
+props<{ error: string }>());
 
 // REMOVE DRAFT
 export const removeDraft =

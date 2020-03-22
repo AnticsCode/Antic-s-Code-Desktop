@@ -6,7 +6,8 @@ import {
   distinctUntilChanged,
   exhaustMap,
   takeUntil,
-  mergeMap }
+  mergeMap,
+  tap}
 from 'rxjs/operators';
 
 import { of, Subject } from 'rxjs';
@@ -18,7 +19,7 @@ import * as fromDrafts from '@app/core/ngrx/selectors/draft.selectors';
 import * as DraftActions from '@app/core/ngrx/actions/draft.actions';
 import { ActivatedRoute } from '@angular/router';
 import { DraftsService } from '@app/core/services/drafts/drafts.service';
-import { ArticleResponse } from '../../../../../../shared/interfaces/interfaces';
+import { ArticleResponse } from '@shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-create-content',
@@ -41,17 +42,16 @@ export class CreateContentComponent implements OnInit {
   ngOnInit() {
     this.getArticleDraft();
     this.initChanges();
-    this.checkDraftLoader();
   }
 
   public initChanges(): void {
     this.creator.previewChange
     .pipe(
+      tap(() => this.loading = true),
       debounceTime(1000),
       distinctUntilChanged(),
       takeUntil(this.unsubscribe$),
       exhaustMap((res: string) => {
-        this.loading = true;
         this.preview = res;
         return of(res)
       }))
@@ -80,24 +80,14 @@ export class CreateContentComponent implements OnInit {
      .subscribe((res: Article) => {
        if (res) {
          this.draft = res;
+         this.preview = res.message;
        }
      })
-  }
-
-  private checkDraftLoader(): void {
-    this.activatedRoute.paramMap
-    .pipe(takeUntil(this.unsubscribe$))
-    .subscribe(() => {
-      if (window.history.state.loadDraft) {
-        this.preview = this.draft.message;
-      }
-    })
   }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
-    this.store.dispatch(DraftActions.showDraftDialog({show: true}));
   }
 
 }

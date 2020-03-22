@@ -7,6 +7,9 @@ import { takeUntil, switchMap } from 'rxjs/operators';
 import { LoadDraftComponent } from '@app/shared/components/layout/dialogs/load-draft/load-draft.component';
 import { NbDialogService } from '@nebular/theme';
 import { Router } from '@angular/router';
+import * as DraftActions from '@app/core/ngrx/actions/draft.actions';
+import { DraftsService } from '@app/core/services/services.index';
+import { ArticleResponse } from '@app/shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-create-form',
@@ -20,10 +23,23 @@ export class CreateFormComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store<AppState>,
               private dialogService: NbDialogService,
-              private router: Router) { }
+              private router: Router,
+              private _draft: DraftsService) { }
 
   ngOnInit() {
+    this.checkUserDraft();
     this.checkDraftDialog();
+  }
+
+  private checkUserDraft(): void {
+    this._draft.getDraftsByUser('Draft')
+    .pipe(takeUntil(this.unsubscribe$))
+     .subscribe((res: ArticleResponse) => {
+       if (res.ok) {
+        this.store.dispatch(DraftActions.saveDraft({draft: res.drafts[0]}));
+        this.store.dispatch(DraftActions.showDraftDialog({show: true}));
+       }
+     });
   }
 
   private checkDraftDialog(): void {
@@ -38,7 +54,7 @@ export class CreateFormComponent implements OnInit, OnDestroy {
      }))
      .subscribe((res: boolean) => {
       if (res) {
-        this.router.navigateByUrl('/home/create', { state: {loadDraft: true}})
+        this.router.navigateByUrl('/home/create');
       }
     })
   }

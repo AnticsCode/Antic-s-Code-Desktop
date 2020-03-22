@@ -1,9 +1,8 @@
 <div *ngIf="article">
-  <div class="template">
+  <div class="template animated fadeIn">
     <app-article-header [article]="article"></app-article-header>
     <markdown ngPreserveWhitespaces
-              [data]="article.message"
-              (ready)="onReady(article.message)">
+              [data]="article.message">
     </markdown>
   </div>
 </div>

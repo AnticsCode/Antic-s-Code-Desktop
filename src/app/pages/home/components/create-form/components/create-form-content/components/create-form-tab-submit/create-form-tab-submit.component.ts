@@ -69,7 +69,7 @@ export class CreateFormTabSubmitComponent implements OnInit {
           summary: new FormControl(null, [
                                           Validators.required,
                                           Validators.minLength(100),
-                                          Validators.maxLength(300)]),
+                                          Validators.maxLength(600)]),
            level: new FormControl(null, [Validators.required]),
             cover: new FormControl(null, [Validators.required,
                                           Validators.minLength(4),

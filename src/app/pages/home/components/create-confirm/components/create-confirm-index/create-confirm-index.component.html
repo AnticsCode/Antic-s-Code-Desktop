@@ -1,6 +1,6 @@
 <div class="index-content"
      *ngIf="(draft$ | async) as draft">
-  <h3>Tú Artículo</h3>
+  <h3>Tu Artículo</h3>
   <ul>
     <li>
       <img [src]="draft.cover"
@@ -33,9 +33,10 @@
     </li>
     <li>
       <span>Introducción</span>
-      <p class="grey">
-        {{ draft.summary }}
-      </p>
+        <markdown ngPreserveWhitespaces
+                  [data]="draft.summary"
+                  class="grey">
+        </markdown>
     </li>
   </ul>
 </div>

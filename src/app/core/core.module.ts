@@ -22,6 +22,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './ngrx/reducers/reducers.index';
 import { DraftEffects } from './ngrx/effects/draft.effects';
+import { UserEffects } from './ngrx/effects/user.effects';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -36,6 +37,7 @@ import { ToastrModule } from 'ngx-toastr';
     StoreModule.forFeature('AppState', reducers),
     EffectsModule.forRoot([
       DraftEffects,
+      UserEffects
     ]),
     NgxWebstorageModule.forRoot(CORE_MODULE_CONSTANTS.WEBSTORAGE_CONFIG),
     TranslateModule.forRoot({

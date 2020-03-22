@@ -7,13 +7,19 @@ nb-action {
 }
 
 button {
-  text-align: center;
+  text-align: left;
   font-size: 1.1rem;
+  position: relative;
+  padding-right: 3.5rem;
 
   & nb-icon {
-    margin-left: .3rem;
-    position: relative;
-    top: 2px;
+    position: absolute;
+    top: 30%;
+    right: 1rem;
+  }
+
+  &:hover nb-icon {
+    color: var(--primary-color);
   }
 }
 

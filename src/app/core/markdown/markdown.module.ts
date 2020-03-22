@@ -30,7 +30,7 @@ export function markedOptionsFactory(): MarkedOptions {
     tables: false,
     breaks: false,
     pedantic: false,
-    sanitize: true,
+    sanitize: false,
     smartLists: true,
     smartypants: false,
   };

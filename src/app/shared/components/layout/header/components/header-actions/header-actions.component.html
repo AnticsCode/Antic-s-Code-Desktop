@@ -30,9 +30,13 @@
 <app-search-bar *ngIf="show" (closed)="show = !show"></app-search-bar>
 
 <mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="logout()">
+    Logout
+    <nb-icon icon="log-out-outline"></nb-icon>
+  </button>
   <button mat-menu-item (click)="exit()">
     Exit
-    <nb-icon icon="log-out-outline"></nb-icon>
+    <nb-icon icon="close-square-outline"></nb-icon>
   </button>
 </mat-menu>
 

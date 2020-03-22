@@ -12,13 +12,13 @@
                 nbPopoverTrigger="hover">
       </nb-icon>
       <input formControlName="title"
-              name="title"
-              type="text"
-              placeholder="Título"
-              class="form-control"
-              nbInput
-              fullWidth
-              [status]="title.invalid ? 'danger' : 'success'">
+             name="title"
+             type="text"
+             placeholder="Título"
+             class="form-control"
+             nbInput
+             fullWidth
+             [status]="title.invalid ? 'danger' : 'success'">
     </div>
     <div class="input-group">
       <mat-label>Autor del Artículo</mat-label>
@@ -28,11 +28,11 @@
                 nbPopoverTrigger="hover">
       </nb-icon>
       <input formControlName="author"
-              type="text"
-              placeholder="Autor"
-              class="form-control"
-              nbInput
-              fullWidth>
+             type="text"
+             placeholder="Autor"
+             class="form-control"
+             nbInput
+             fullWidth>
     </div>
     <div class="input-group inline m-b">
       <mat-label>Elige una Categoría</mat-label>
@@ -75,10 +75,10 @@
                 nbPopoverTrigger="hover">
       </nb-icon>
       <nb-select formControlName="badges"
-                  placeholder="Badges"
-                  fullWidth
-                  multiple
-                  [status]="badges.invalid ? 'danger' : 'success'">
+                 placeholder="Badges"
+                 fullWidth
+                 multiple
+                 [status]="badges.invalid ? 'danger' : 'success'">
         <nb-option *ngFor="let b of badgesList"
                     [value]="b">{{ b }}
         </nb-option>
@@ -92,9 +92,9 @@
                 nbPopoverTrigger="hover">
       </nb-icon>
       <nb-select formControlName="level"
-                  placeholder="Nivel"
-                  fullWidth
-                  [status]="level.invalid ? 'danger' : 'success'">
+                 placeholder="Nivel"
+                 fullWidth
+                 [status]="level.invalid ? 'danger' : 'success'">
         <nb-option *ngFor="let l of levelsList"
                     [value]="l">{{ l }}
         </nb-option>
@@ -108,13 +108,13 @@
                 nbPopoverTrigger="hover">
       </nb-icon>
       <input formControlName="cover"
-              name="cover"
-              type="text"
-              placeholder="URL Imagen"
-              class="form-control"
-              nbInput
-              fullWidth
-              [status]="cover.invalid ? 'danger' : 'success'">
+             name="cover"
+             type="text"
+             placeholder="URL Imagen"
+             class="form-control"
+             nbInput
+             fullWidth
+             [status]="cover.invalid ? 'danger' : 'success'">
     </div>
     <div class="input-group">
       <mat-label>Escribe una introducción para el Artículo</mat-label>
@@ -125,13 +125,13 @@
                 nbPopoverTrigger="hover">
       </nb-icon>
       <textarea formControlName="summary"
-              name="summary"
-              type="text"
-              placeholder="Introducción"
-              class="form-control"
-              nbInput
-              fullWidth
-              [status]="summary.invalid ? 'danger' : 'success'">
+                name="summary"
+                type="text"
+                placeholder="Introducción"
+                class="form-control"
+                nbInput
+                fullWidth
+                [status]="summary.invalid ? 'danger' : 'success'">
       </textarea>
     </div>
     <button nbButton

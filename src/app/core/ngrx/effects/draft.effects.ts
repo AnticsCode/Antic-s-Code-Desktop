@@ -21,6 +21,18 @@ export class DraftEffects {
     )
   );
 
+  // SAVE PREVIEW ARTICLE
+  setPreviewArticle$ = createEffect(() => this.actions
+  .pipe(
+    ofType(DraftActions.savePreviewArticle),
+    concatMap((action) =>
+        of(DraftActions.savePreviewArticleSuccess({article: action.article}))),
+        catchError(error =>
+            of(DraftActions.savePreviewArticleFailure({ error: error.message }))
+      )
+    )
+  );
+
   // SHOW DRAFT DIALOG
   showDraftDialog$ = createEffect(() => this.actions
   .pipe(

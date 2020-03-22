@@ -26,7 +26,7 @@ export class ErrorService {
     if (err instanceof HttpErrorResponse) {
       return new CustomError(
         err.name,
-        err.error.message,
+        err.error.message || 'Error',
         err.statusText,
         this.ls.get('user') || null,
         err.status,
@@ -36,7 +36,7 @@ export class ErrorService {
     } else {
       return new CustomError(
         err.name,
-        err.message,
+        err.message || 'Error',
         err.stack,
         this.ls.get('user') || null,
         null,

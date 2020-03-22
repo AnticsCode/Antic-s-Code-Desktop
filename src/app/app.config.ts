@@ -3,15 +3,17 @@
 
 import { InjectionToken } from '@angular/core';
 import * as fromDrafts from '@app/core/ngrx/reducers/draft.reducer';
+import * as fromUsers from '@core/ngrx/reducers/user.reducer';
 
 const DEV = 'http://localhost:3000/';
 const PRE = 'http://192.168.1.97:3000/';
 const PROD = 'https://antics-code.herokuapp.com/';
-const APP_VERSION = '0.3.0';
+const APP_VERSION = '0.4.0';
 export const URI = 'https://anticscode.netlify.com';
 
 export interface AppState {
-  drafts: fromDrafts.DraftState;
+  drafts: fromDrafts.DraftState,
+  user: fromUsers.UserState
 }
 
 export interface AppConfig {

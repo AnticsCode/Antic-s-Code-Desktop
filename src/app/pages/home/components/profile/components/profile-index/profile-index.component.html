@@ -14,6 +14,7 @@
       <p *ngIf="user.profile.bio"
          [innerHTML]="user.profile.bio | sanitizer: 'html'">
       </p>
+      <p *ngIf="!user.profile.bio">Aún no tienes una presentación. Escribe una editando tu perfil.</p>
     </div>
 
     <div class="profile-social" *ngIf="user.profile">

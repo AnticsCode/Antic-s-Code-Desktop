@@ -1,0 +1,343 @@
+<div class="template" *ngIf="draft">
+  <h1>Aprobación del Artículo</h1>
+  <h3>{{draft.title}}</h3>
+  <h5>A continuación se muestran los criterios que un Artículo debe cumplir,
+    cada uno de ellos acompañado de la información pertinente.
+  </h5>
+
+  <button nbButton
+          status="danger"
+          class="watch-button"
+          (click)="previewArticle()">
+          Ver Artículo
+  </button>
+
+  <div class="cards">
+     <!-- TITLE -->
+    <app-basic-card class="card">
+      <nb-icon [icon]="check[0].icon"></nb-icon>
+      <h4>{{check[0].name}}</h4>
+      <p>{{check[0].hint}}</p>
+      <p class="example">{{draft.title}}</p>
+
+      <p>
+        Un buen <strong>título</strong> es corto y descriptivo. Solo con leerlo deberías
+        ser capaz de identificar que tipo de contenido vas a encontrar dentro.
+        También puedes dar una idea del título con una pregunta. "¿Es la ciberseguridad una
+        opción segura?", "¿Por qué elegir Python?". No olvides que el lector decide si seguir
+        leyendo después de leer el título.
+      </p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodTitle.ok"
+                    [checked]="draft.check.hasGoodTitle.ok">
+          El Artículo cumple con los requisitos de un buen <strong>título</strong>.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodTitle.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué el título no cumple los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodTitle.cause">
+      </div>
+    </app-basic-card>
+    <!-- CATEGORY -->
+    <app-basic-card class="card">
+      <nb-icon [icon]="check[1].icon"></nb-icon>
+      <h4>{{check[1].name}}</h4>
+      <p>{{check[1].hint}}</p>
+      <p class="example">{{draft.category}}</p>
+
+      <p>
+        Después de echar un ojo al Artículo podrás decidir si la <strong>categoría</strong>
+        corresponde con la proporcionada. Ten en cuenta que es posible que un tema
+        abarque dos o más categorías, intenta aprobar la más acorde.
+      </p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodCategory.ok"
+                    [checked]="draft.check.hasGoodCategory.ok">
+          El Artículo tiene una <strong>categoría</strong> relacionada.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodCategory.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué la categoría no cumple los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodCategory.cause">
+      </div>
+    </app-basic-card>
+    <!-- TAGS -->
+    <app-basic-card class="card">
+      <nb-icon [icon]="check[2].icon"></nb-icon>
+      <h4>{{check[2].name}}</h4>
+      <p>{{check[2].hint}}</p>
+      <p class="example">
+        <span class="tag" *ngFor="let t of draft.tags">{{t}}</span>
+      </p>
+
+      <p>
+        Es importante que todas las <strong>etiquetas</strong> estén relacionadas con el Artículo.
+        Esto ayuda al lector a identificar que tipo de Artículo está leyendo con más facilidad.
+        Echa una vistazo al mensaje del Artículo si tienes dudas.
+      </p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodTags.ok"
+                    [checked]="draft.check.hasGoodTags.ok">
+          El Artículo tiene <strong>etiquetas</strong> bien definidas.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodTags.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué las etiquetas no cumplen los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodTags.cause">
+      </div>
+    </app-basic-card>
+    <!-- BADGES -->
+    <app-basic-card class="card">
+      <nb-icon [icon]="check[3].icon"></nb-icon>
+      <h4>{{check[3].name}}</h4>
+      <p>{{check[3].hint}}</p>
+      <p class="example">
+        <span class="tag" *ngFor="let b of draft.badges">{{b}}</span>
+      </p>
+
+      <p>
+        De todos los criterios este es el menos importante. Si es un Artículo
+        nuevo deberá tenerlo como estado. Si crees que el Artículo es
+        completo e interesante, <strong>destacado</strong> puede ser un buen estado.
+      </p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodBadges.ok"
+                    [checked]="draft.check.hasGoodBadges.ok">
+          El Artículo tiene un <strong>estado</strong> acorde.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodBadges.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué el estado no cumple los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodBadges.cause">
+      </div>
+    </app-basic-card>
+    <!-- LEVEL -->
+    <app-basic-card class="card">
+      <nb-icon [icon]="check[4].icon"></nb-icon>
+      <h4>{{check[4].name}}</h4>
+      <p>{{check[4].hint}}</p>
+      <p class="example">{{draft.level}}</p>
+
+      <p>
+        No todos los Artículos tendrán el mismo <strong>nivel</strong> ni irán dirigos a un
+        público en concreto. Para diferenciarlos,
+        comprueba que el nivel es acorde al Artículo. Repasa el Artículo si es necesario.
+      </p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodLevel.ok"
+                    [checked]="draft.check.hasGoodLevel.ok">
+          El Artículo tiene un <strong>nivel</strong> proporcional a lo enseñado.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodLevel.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué el nivel no cumple los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodLevel.cause">
+      </div>
+    </app-basic-card>
+    <!-- LINKS -->
+    <app-basic-card class="card"
+                   *ngIf="draft.links.length > 0">
+      <nb-icon [icon]="check[5].icon"></nb-icon>
+      <h4>{{check[5].name}}</h4>
+      <p>{{check[5].hint}}</p>
+      <p class="example">
+        <span class="tag"
+              *ngFor="let l of draft.links">
+              <a [href]="l.url" target="NEW">{{l.name}}</a>
+        </span>
+      </p>
+
+      <p>
+        Los <strong>enlaces</strong> son una manera de dar más información relacionada al tema
+        expuesto en el Artículo. Comprueba que tienen un
+        título claro, descriptivo y por supuesto que el enlace funcione.
+      </p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodLinks.ok"
+                    [checked]="draft.check.hasGoodLinks.ok">
+          El Artículo tiene <strong>enlaces</strong> correctos.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodLinks.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué los links no cumplen los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodLinks.cause">
+      </div>
+    </app-basic-card>
+    <!-- COVER -->
+    <app-basic-card class="card">
+      <nb-icon [icon]="check[6].icon"></nb-icon>
+      <h4>{{check[6].name}}</h4>
+      <p>{{check[6].hint}}</p>
+
+      <img class="cover"
+           alt="cover"
+           loading="lazy"
+           #img
+           (error)="img.src = 'assets/img/no-image.png'; img.alt='No Image'"
+           [src]="draft.cover"/>
+
+      <p>
+        ¿Te gusta la <strong>imagen</strong> que ves? Esta imagen se usará como portada para el Artículo
+        y será lo primero que verá el lector. Es muy importante que esté relacionada
+        con el Artículo de alguna manera. Además no podrá superar los 100kb. Esto es
+        así para que la página cargue lo más rápido posible.
+      </p>
+
+      <p>Tamaño de la imagen: <strong>{{coverSize}} Kb</strong></p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodCover.ok"
+                    [checked]="draft.check.hasGoodCover.ok">
+          El Artículo tiene una buena <strong>imagen</strong> de portada y pesa menos de 100kb.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodCover.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué la imagen no cumple los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodCover.cause">
+      </div>
+    </app-basic-card>
+    <!-- SUMMARY -->
+    <app-basic-card class="card">
+      <nb-icon [icon]="check[7].icon"></nb-icon>
+      <h4>{{check[7].name}}</h4>
+      <p>{{check[7].hint}}</p>
+      <p class="example">{{draft.summary}}</p>
+
+      <p>
+        Escribir una buena <strong>introducción</strong> es esencial para que el lector haga
+        click en el Artículo para leerlo entero. Son las primeras letras del Artículo, así
+        que tienen que atraer al lector de una manera rápida y directa.
+      </p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodSummary.ok"
+                    [checked]="draft.check.hasGoodSummary.ok">
+          El Artículo tiene una <strong>introducción</strong> correcta.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodSummary.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué la introducción no cumple los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodSummary.cause">
+      </div>
+    </app-basic-card>
+    <!-- MESSAGE -->
+    <app-basic-card class="card">
+      <nb-icon [icon]="check[8].icon"></nb-icon>
+      <h4>{{check[8].name}}</h4>
+      <p>{{check[8].hint}}</p>
+      <p class="example">Usa la vista previa para ver el mensaje</p>
+
+      <p>
+        Seguramente el <strong>mensaje</strong> es la parte más importante del Artículo. No estamos para
+        corregir faltas de ortografía pero sí para detectar contenido inhadecuado, ofensivo,
+        en resumen... cualquier contenido inhapropiado. Tómate tu tiempo, no hay prisa para
+        llenar el bául de Artículos publicados. Preferimos calidad por encima de cantidad.
+      </p>
+
+      <div class="checkbox">
+        <nb-checkbox status="danger"
+                     class="admin-check"
+                    [(ngModel)]="draft.check.hasGoodMessage.ok"
+                    [checked]="draft.check.hasGoodMessage.ok">
+          El Artículo tiene un <strong>mensaje</strong> correcto.
+        </nb-checkbox>
+      </div>
+
+      <div class="input-group animated fadeInDown"
+          *ngIf="!draft.check.hasGoodMessage.ok">
+        <mat-label>Causa</mat-label>
+        <input type="text"
+               placeholder="¿Por qué el mensaje no cumple los requisitos?"
+               class="form-control"
+               nbInput
+               fullWidth
+               [(ngModel)]="draft.check.hasGoodMessage.cause">
+      </div>
+    </app-basic-card>
+  </div>
+
+  <button nbButton
+          status="danger"
+          class="save-button"
+          (click)="publish()">
+          Guardar
+  </button>
+</div>

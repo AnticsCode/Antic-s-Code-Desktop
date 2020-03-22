@@ -9,7 +9,9 @@ import { StorageService } from '@core/storage/storage.service';
 import { LoginService } from '@core/services/login/login.service';
 import { UserService } from '@core/services/user/user.service';
 import { CrafterService } from '@core/services/crafter/crafter.service';
-
+import { Store } from '@ngrx/store';
+import { AppState } from '@app/app.config';
+import * as UserActions from '@core/ngrx/actions/user.actions';
 
 @Component({
   selector: 'app-login-form',
@@ -28,12 +30,13 @@ export class LoginFormComponent implements OnInit, OnDestroy {
               private userService: UserService,
               private ls: StorageService,
               private router: Router,
-              private crafter: CrafterService) { }
+              private crafter: CrafterService,
+              private store: Store<AppState>) { }
 
   ngOnInit() {
     this.createSignInForm();
     this.rememberMe();
-    this.signIn('test1@gmail.com', 'test1');
+    this.checkUserToken();
   }
 
   onSubmit(): void {
@@ -91,6 +94,12 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     this.userService.setUser(data.user);
     this.ls.userLogin(data, this.remember);
     this.router.navigateByUrl('/home');
+  }
+
+  private checkUserToken(): void {
+    if (this.ls.get('token')) {
+      this.store.dispatch(UserActions.verifyToken());
+    }
   }
 
   ngOnDestroy(): void {

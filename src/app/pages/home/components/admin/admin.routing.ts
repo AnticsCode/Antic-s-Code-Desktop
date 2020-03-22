@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AdminContentComponent } from './components/admin-content/admin-content.component';
+import { AdminEditArticleComponent } from './components/admin-edit-article/admin-edit-article.component';
+import { AdminPreviewArticleComponent } from './components/admin-preview-article/admin-preview-article.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
       {
         path: '',
         component: AdminContentComponent
+      },
+      {
+        path: 'edit/:slug',
+        component: AdminEditArticleComponent
+      },
+      {
+        path: 'preview',
+        component: AdminPreviewArticleComponent
       }
     ]
   }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +10,7 @@ export class LoginComponent implements OnInit {
 
   login = false;
 
-  constructor(private render: Renderer2,
-              private router: Router) { }
+  constructor(private render: Renderer2) { }
 
   ngOnInit() { }
 

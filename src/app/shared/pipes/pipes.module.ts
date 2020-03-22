@@ -6,6 +6,7 @@ import { SanitizerPipe } from './sanitizer/sanitizer.pipe';
 import { MediaIconPipe } from './media-icon/media-icon.pipe';
 import { StatusPipe } from './status/status.pipe';
 import { PublicSlugPipe } from './public-slug/public-slug.pipe';
+import { CheckboxPipe } from './checkbox/checkbox.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PublicSlugPipe } from './public-slug/public-slug.pipe';
     SanitizerPipe,
     MediaIconPipe,
     StatusPipe,
-    PublicSlugPipe
+    PublicSlugPipe,
+    CheckboxPipe
   ],
   exports: [
     ImagePipe,
@@ -22,7 +24,8 @@ import { PublicSlugPipe } from './public-slug/public-slug.pipe';
     SanitizerPipe,
     MediaIconPipe,
     StatusPipe,
-    PublicSlugPipe
+    PublicSlugPipe,
+    CheckboxPipe
   ]
 })
 

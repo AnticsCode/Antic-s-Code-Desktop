@@ -12,8 +12,16 @@ export const getDraft = createSelector(
   getDraftState, fromDrafts.getDraft
 );
 
+export const getPreviewArticle = createSelector(
+  getDraftState, fromDrafts.getPreviewArticle
+);
+
 export const getDraftLoaded = createSelector(
   getDraftState, fromDrafts.getDraftLoaded
+);
+
+export const getPreviewArticleLoaded = createSelector(
+  getDraftState, fromDrafts.getPreviewArticleLoaded
 );
 
 export const getShowDraftSnack = createSelector(

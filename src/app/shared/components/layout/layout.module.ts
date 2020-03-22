@@ -7,6 +7,7 @@ import { HeaderModule } from './header/header.module';
 import { RouterModule } from '@angular/router';
 import { DialogsModule } from './dialogs/dialogs.module';
 import { SnackbarsModule } from './snackbars/snackbars.module';
+import { CardsModule } from './cards/cards.module';
 
 @NgModule({
   declarations: [
@@ -19,14 +20,16 @@ import { SnackbarsModule } from './snackbars/snackbars.module';
     SharedModule,
     RouterModule,
     DialogsModule,
-    SnackbarsModule
+    SnackbarsModule,
+    CardsModule
   ],
   exports: [
     HeaderComponent,
     SidebarComponent,
     HeaderModule,
     DialogsModule,
-    SnackbarsModule
+    SnackbarsModule,
+    CardsModule
   ]
 })
 

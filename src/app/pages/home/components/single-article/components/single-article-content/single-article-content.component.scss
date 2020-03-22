@@ -1,0 +1,47 @@
+@import '../../../../../../../assets/styles/themes/themes.scss';
+
+@include nb-install-component {
+  .lds-ring div {
+    border: 8px solid nb-theme(text-basic-color);
+    border-color: nb-theme(text-basic-color) transparent transparent transparent;
+  }
+}
+
+.summary {
+  min-height: 50px;
+  margin-top: 1rem !important;
+}
+
+.loading {
+  position: absolute;
+  bottom: calc(var(--navbar-height) + .6rem);
+  right: .8rem;
+
+  & nb-icon {
+    font-size: 2.2rem;
+  }
+}
+
+.success {
+  color: rgb(81, 167, 35);
+}
+
+.template {
+  height: calc(100% - var(--navbar-height));
+
+  & p {
+    margin-top: 25px;
+  }
+
+  h3:before {
+    padding-top: 65px;
+  }
+}
+
+button {
+  width: 50.2%;
+  margin: 3.8rem 1.2rem 0 auto;
+  position: relative;
+  right: 3px;
+  display: block;
+}
