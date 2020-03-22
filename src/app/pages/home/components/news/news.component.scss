@@ -1,0 +1,7 @@
+@import '../../../../../assets/styles/themes/themes.scss';
+
+@include nb-install-component {
+  .index {
+    background: nb-theme(background-basic-color-2);
+  }
+}

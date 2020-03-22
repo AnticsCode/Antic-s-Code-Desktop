@@ -1,0 +1,65 @@
+@import '../../../../../../../../../assets/styles/themes/themes.scss';
+
+@include nb-install-component {
+  h5 {
+    color: nb-theme(color-basic-600);
+  }
+}
+
+*, *::before, *::after {
+  font-family: var(--primary-font) !important;
+  font-size: var(--primay-font-size);
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+  &::before {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+ul {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  list-style: none;
+
+  & li {
+    margin: .8rem 4rem auto auto;
+    position: relative;
+    padding-left: 1.2rem;
+
+    & nb-icon {
+      position: absolute;
+      top: 1px;
+      left: -5px;
+    }
+  }
+}
+
+.check-box {
+  padding-bottom: 2rem;
+  & span {
+    font-size: .8rem;
+    padding-left: .55rem;
+  }
+}
+
+button {
+  width: 46.5%;
+  margin: 1rem 2rem 2rem 0;
+  position: relative;
+  left: 3px;
+}
+
+.bold {
+  padding-left: 0 !important;
+}

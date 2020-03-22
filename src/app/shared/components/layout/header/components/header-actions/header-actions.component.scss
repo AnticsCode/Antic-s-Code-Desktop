@@ -1,0 +1,25 @@
+nb-action {
+  outline: none;
+
+  & nb-icon {
+    cursor: pointer;
+  }
+}
+
+button {
+  text-align: left;
+  font-size: 1.1rem;
+  position: relative;
+  padding-right: 3.5rem;
+
+  & nb-icon {
+    position: absolute;
+    top: 30%;
+    right: 1rem;
+  }
+
+  &:hover nb-icon {
+    color: var(--primary-color);
+  }
+}
+

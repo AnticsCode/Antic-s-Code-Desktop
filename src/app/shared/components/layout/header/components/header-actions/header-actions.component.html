@@ -1,0 +1,46 @@
+<nb-actions size="small">
+  <nb-action routerLink="./create-form"
+             nbTooltip="Crear"
+             nbTooltipPlacement="bottom">
+    <nb-icon icon="brush-outline" status="success"></nb-icon>
+  </nb-action>
+  <nb-action (click)="show = !show"
+             nbTooltip="Buscar"
+             nbTooltipPlacement="bottom">
+    <nb-icon icon="search-outline" status="null"></nb-icon>
+  </nb-action>
+  <nb-action routerLink="./profile"
+             nbTooltip="Perfil"
+             nbTooltipPlacement="bottom">
+    <nb-icon icon="person-outline" status="null"></nb-icon>
+  </nb-action>
+  <nb-action routerLink="./settings"
+             nbTooltip="Opciones"
+             nbTooltipPlacement="bottom">
+    <nb-icon icon="settings-2-outline" status="null"></nb-icon>
+  </nb-action>
+  <nb-action>
+    <nb-icon [matMenuTriggerFor]="menu"
+             icon="power-outline"
+             status="danger">
+    </nb-icon>
+  </nb-action>
+</nb-actions>
+
+<app-search-bar *ngIf="show" (closed)="show = !show"></app-search-bar>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="logout()">
+    Logout
+    <nb-icon icon="log-out-outline"></nb-icon>
+  </button>
+  <button mat-menu-item (click)="exit()">
+    Exit
+    <nb-icon icon="close-square-outline"></nb-icon>
+  </button>
+</mat-menu>
+
+
+
+
+

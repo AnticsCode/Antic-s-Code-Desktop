@@ -1,0 +1,20 @@
+<div class="card"
+     *ngIf="draft">
+     <h5>{{ draft.title }}</h5>
+     <div class="card-data">
+        <span class="bold">{{ draft.author }}</span>
+        <span>{{ draft.created }}</span>
+        <div class="flex">
+          <img alt="logo" [src]="(draft.category | logo) | image:'logos'">
+          {{draft.category}}
+        </div>
+        <span>
+          <button nbButton
+                  outline
+                  size="tiny"
+                  [status]="draft.status | status">
+            {{ draft.status }}
+          </button>
+        </span>
+     </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="index">
+    <app-articles-index [articles]="articles$ | async">
+    </app-articles-index>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

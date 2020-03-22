@@ -1,0 +1,14 @@
+<div *ngIf="article">
+  <div class="template animated fadeIn">
+    <app-article-header [article]="article"></app-article-header>
+    <markdown ngPreserveWhitespaces
+              [data]="article.message">
+    </markdown>
+  </div>
+</div>
+
+<div class="flex" *ngIf="!article">
+  <div class="spinner">
+    <app-spinner></app-spinner>
+  </div>
+</div>

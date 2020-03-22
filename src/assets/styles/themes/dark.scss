@@ -1,0 +1,38 @@
+.nb-theme-dark nb-sidebar.expanded,
+.nb-theme-dark nb-sidebar .main-container {
+  width: var(--sidebar-width) !important;
+}
+
+.nb-theme-dark nb-layout.with-scroll .scrollable-container {
+  height: auto !important;
+}
+
+.nb-theme-dark nb-layout .layout .layout-container .content .columns nb-layout-column {
+  padding: 0 !important;
+}
+
+.nb-theme-dark nb-sidebar .scrollable {
+  padding: 0 !important;
+}
+
+.nb-theme-dark nb-stepper .step-content {
+  padding: 1.25rem 0 !important;
+  margin-left: .75rem;
+}
+
+.nb-theme-dark nb-checkbox.status-basic.status-draft
+.native-input:disabled:indeterminate+.custom-checkbox {
+  background: rgba(163, 19, 19, 0.767) !important;
+  cursor: pointer;
+}
+
+.nb-theme-dark nb-checkbox.status-basic.status-draft.valid
+.native-input:disabled:checked+.custom-checkbox {
+  background: #00f566d3 !important;
+  cursor: pointer;
+}
+
+.nb-theme-dark nb-checkbox.admin-check .text {
+  font-size: .9rem !important;
+  padding-left: 1rem !important;
+}

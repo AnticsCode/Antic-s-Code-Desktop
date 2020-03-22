@@ -1,0 +1,96 @@
+@import '../../../../../../../assets/styles/themes/themes.scss';
+
+@include nb-install-component {
+  nb-list-item {
+    border-top: 1px solid nb-theme(border-primary-color-2);
+    &:hover {
+      cursor: pointer;
+      background: nb-theme(background-basic-color-4);
+    }
+
+    &.active {
+      background: nb-theme(background-basic-color-4);
+    }
+  }
+}
+
+nb-list {
+  width: var(--index-width);
+  max-width: var(--index-width);
+  height: calc(100vh - var(--navbar-height));
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+}
+
+nb-list-item {
+  position: relative;
+  font-size: .7rem;
+  padding: 1rem 1.888rem 1rem 1.888rem;
+  outline: none;
+  align-items: flex-start;
+  flex-direction: column;
+  &:first-child {
+    border-top: none !important;
+  }
+
+  &:hover .detail {
+    opacity: 1;
+  }
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: .888rem;
+
+  & > div {
+    display: flex;
+
+    &:first-child {
+      margin-right: 2.5rem;
+    }
+
+    & span {
+      font-size: .8rem ;
+      margin-left: .4rem;
+    }
+  }
+
+  .views {
+    position: absolute;
+    left: 49%;
+  }
+
+  .likes {
+    position: absolute;
+    left: 68%;
+  }
+
+  nb-icon {
+    font-size: 1.2rem;
+  }
+
+  & img {
+    width: 20px;
+    height: 20px;
+    margin-right: .5rem;
+    display: inline-block;
+  }
+}
+
+*, span, p { font-size: .8rem }
+.title { font-size: .9rem }
+
+.detail {
+  position: absolute;
+  right: 1rem;
+  top: 40%;
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+
