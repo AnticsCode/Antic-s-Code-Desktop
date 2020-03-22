@@ -1,0 +1,13 @@
+.sort {
+  display: flex;
+  margin-bottom: 1.5rem;
+
+  & button {
+    margin-right: 1rem;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 2rem !important;
+}

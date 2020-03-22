@@ -1,0 +1,125 @@
+.template {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 0;
+  bottom: 0;
+  left: var(--index-width);
+  right: 0;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0 2rem 2rem 2rem;
+
+  p {
+    margin-top: 30px;
+    font-size: 17px;
+    line-height: 1.7 !important;
+    color: black;
+    &:first-child { margin-top: 20px }
+    &.first { margin-top: 10px }
+  }
+
+  ul, ol {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #1a1a1a;
+    padding-left: 20px;
+    list-style: disc;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  ul li, ol li {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    line-height: 1.2;
+    font-size: 24px;
+  }
+
+  h2:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ececec;
+    padding-top: 44px;
+    margin-bottom: 40px;
+    box-sizing: inherit;
+  }
+
+  h3 { font-size: 1.17rem }
+
+  h3:before {
+    content: " ";
+    display: block;
+    padding-top: 90px;
+    margin-top: -45px;
+    box-sizing: inherit;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: -.2rem;
+    font-size: 1rem;
+    &:first-child { margin-top: 0 }
+  }
+
+  blockquote {
+    border-left-color: var(--primary-color);
+    border-left-width: 9px;
+    border-left-style: solid;
+    background: #2e3a59;
+    padding: 20px 45px 20px 26px;
+    margin: 30px 0;
+    border-radius: 5px;
+
+    & p {
+      margin: 0 !important;
+      color: white !important;
+    }
+  }
+
+  code {
+    font-size: 1em;
+    border-top: 0;
+    box-sizing: border-box;
+    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+  }
+
+  pre {
+    line-height: 20px;
+    border-radius: 5px;
+    word-break: break-word;
+    height: auto !important;
+    margin: 30px auto !important;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 30px auto;
+    border-radius: 4px;
+  }
+
+  hr {
+    height: 1px;
+    margin-bottom: -1px;
+    border: none;
+    border-bottom: 1px solid #ececec;
+    margin-top: 30px;
+    box-sizing: content-box;
+  }
+}
+
+.grey p {
+  margin-top: .5rem;
+  color: #8f9bb3 !important;
+}
+
+.progress-value span {
+  font-size: .8rem !important;
+}
+
+

@@ -1,0 +1,33 @@
+<div class="index-content index">
+  <h3>Estado del Artículo</h3>
+
+  <p>
+    A continuación de muestran las <strong>condiciones</strong> que debe
+    seguir un Artículo para que esté en vivo.
+  </p>
+
+  <div class="check-list" *ngIf="check">
+    <div class="item" *ngFor="let c of check; let i = index">
+      <nb-icon [icon]="status[i].icon"></nb-icon>
+      <span [innerHTML]="status[i].hint"></span>
+      <nb-checkbox disabled
+                   checked
+                   class="status-draft"
+                   [indeterminate]="!c.ok"
+                   [ngClass]="{'valid': c.ok}"
+                   [nbTooltip]="c.ok ? 'Ok' : c.cause || 'Causa desconocida'"
+                   nbTooltipIcon="info-outline"
+                   nbTooltipStatus="info">
+      </nb-checkbox>
+    </div>
+  </div>
+
+  <div class="progress">
+    <nb-progress-bar [value]="progress"
+                     status="info"
+                     size="medium"
+                     [displayValue]="true">
+    </nb-progress-bar>
+  </div>
+
+</div>

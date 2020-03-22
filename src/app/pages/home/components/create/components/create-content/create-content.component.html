@@ -1,0 +1,19 @@
+<div class="preview template">
+  <h1>Vista del Artículo</h1>
+  <app-article-header [article]="draft"></app-article-header>
+  <markdown ngPreserveWhitespaces
+            class="markdown"
+            [data]="preview">
+  </markdown>
+</div>
+
+<div class="loading">
+  <div class="lds-ring animated fadeIn" *ngIf="loading">
+    <div></div><div></div><div></div><div></div>
+  </div>
+  <nb-icon *ngIf="!loading"
+           icon="checkmark-outline"
+           status="danger"
+           class="animated fadeIn">
+  </nb-icon>
+</div>

@@ -1,0 +1,19 @@
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  outline: none !important;
+  &:hover { filter: brightness(1.2) }
+}
+
+a, p, span, strong, li, h1, h2, h3, h4, h5, h6, blockquote {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.primary {
+  color: var(--primary-color);
+}

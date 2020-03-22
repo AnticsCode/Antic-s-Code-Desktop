@@ -1,0 +1,15 @@
+<div class="dialog">
+  <h3>Tienes un Artículo guardado</h3>
+  <p>Es posible que hayas dejado un Artículo a medias...</p>
+  <p>¿Quieres volver a cargar el Artículo?</p>
+  <div class="actions">
+    <button nbButton
+            status="success"
+            (click)="close(true)">YES
+    </button>
+    <button nbButton
+            status="danger"
+            (click)="close(false)">NO
+    </button>
+  </div>
+</div>

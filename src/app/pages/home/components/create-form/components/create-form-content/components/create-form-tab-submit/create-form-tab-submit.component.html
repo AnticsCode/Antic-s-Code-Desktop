@@ -1,0 +1,199 @@
+<div class="create-form">
+  <nb-icon class="close" icon="close-outline" (click)="back.emit()"></nb-icon>
+  <form [formGroup]="articleForm"
+        #f="ngForm"
+        (ngSubmit)="onSubmit()"
+        class="step-container">
+    <div class="input-group">
+      <mat-label>Escoge un título para Artículo</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="titlePopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <input formControlName="title"
+             name="title"
+             type="text"
+             placeholder="Título"
+             class="form-control"
+             nbInput
+             fullWidth
+             [status]="title.invalid ? 'danger' : 'success'">
+    </div>
+    <div class="input-group">
+      <mat-label>Autor del Artículo</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="authorPopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <input formControlName="author"
+             type="text"
+             placeholder="Autor"
+             class="form-control"
+             nbInput
+             fullWidth>
+    </div>
+    <div class="input-group inline m-b">
+      <mat-label>Elige una Categoría</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="categoryPopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <nb-select formControlName="category"
+                 placeholder="Categoría"
+                 fullWidth
+                 [status]="category.invalid ? 'danger' : 'success'">
+        <nb-option *ngFor="let c of categories"
+                    [value]="c">{{ c }}
+        </nb-option>
+      </nb-select>
+    </div>
+    <div class="input-group inline m-b">
+      <mat-label>Elige algunas etiquetas para el Artículo</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="tagsPopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <nb-select formControlName="tags"
+                 placeholder="Tags"
+                 fullWidth
+                 multiple
+                 [status]="tags.invalid ? 'danger' : 'success'">
+        <nb-option *ngFor="let t of tagsList"
+                    [value]="t">{{ t }}
+        </nb-option>
+      </nb-select>
+    </div>
+    <div class="input-group inline">
+      <mat-label>Elige estados para el Artículo</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="badgesPopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <nb-select formControlName="badges"
+                 placeholder="Badges"
+                 fullWidth
+                 multiple
+                 [status]="badges.invalid ? 'danger' : 'success'">
+        <nb-option *ngFor="let b of badgesList"
+                    [value]="b">{{ b }}
+        </nb-option>
+      </nb-select>
+    </div>
+    <div class="input-group inline">
+      <mat-label>Elige una nivel para el Artículo</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="levelPopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <nb-select formControlName="level"
+                 placeholder="Nivel"
+                 fullWidth
+                 [status]="level.invalid ? 'danger' : 'success'">
+        <nb-option *ngFor="let l of levelsList"
+                    [value]="l">{{ l }}
+        </nb-option>
+      </nb-select>
+    </div>
+    <div class="input-group">
+      <mat-label>Escoge una imagen para el Artículo</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="coverPopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <input formControlName="cover"
+             name="cover"
+             type="text"
+             placeholder="URL Imagen"
+             class="form-control"
+             nbInput
+             fullWidth
+             [status]="cover.invalid ? 'danger' : 'success'">
+    </div>
+    <div class="input-group">
+      <mat-label>Escribe una introducción para el Artículo</mat-label>
+      <nb-icon class="textarea-icon"
+               icon="info-outline"
+               [nbPopover]="summaryPopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <textarea formControlName="summary"
+                name="summary"
+                type="text"
+                placeholder="Introducción"
+                class="form-control"
+                nbInput
+                fullWidth
+                [status]="summary.invalid ? 'danger' : 'success'">
+      </textarea>
+    </div>
+    <button nbButton
+            status="danger"
+            type="submit"
+            [disabled]="articleForm.invalid">
+            Siguiente
+    </button>
+  </form>
+</div>
+
+<ng-template #titlePopup>
+  <div class="info-popup">
+    Piensa bien el título para el Artículo, además de atraer, sirve para crear un enlace único
+    <p>Mínimo 10 carácteres, máximo 30</p>
+  </div>
+ </ng-template>
+
+ <ng-template #authorPopup>
+  <div class="info-popup">
+    El autor/a del Artículo
+  </div>
+ </ng-template>
+
+ <ng-template #categoryPopup>
+  <div class="info-popup">
+    Escoge un categoría para el Artículo. De ello depende dónde esté ubicado el Artículo
+  </div>
+ </ng-template>
+
+ <ng-template #tagsPopup>
+  <div class="info-popup">
+    Escoge varias etiquetas relacionadas con el Artículo.
+    <p>Máximo 3</p>
+  </div>
+ </ng-template>
+
+ <ng-template #badgesPopup>
+  <div class="info-popup">
+    Escoge el estado del Artículo
+    <p>Máximo 2</p>
+  </div>
+ </ng-template>
+
+ <ng-template #levelPopup>
+  <div class="info-popup">
+    Escoge un nivel de dificultad para el Artículo. Si tienes dudas consulta a un moderador
+  </div>
+ </ng-template>
+
+ <ng-template #coverPopup>
+  <div class="info-popup">
+    Escoge una imagen de portada para el Artículo.
+    Copia desde internet la foto que quieras y pega aquí la URL
+    <p>Solamente .jpg .png</p>
+  </div>
+ </ng-template>
+
+<ng-template #summaryPopup>
+ <div class="info-popup">
+   Escribe una breve introducción del Artículo,
+   incluyendo de que trata y que se espera aprender de él.
+   <p>Mínimo 100 carácteres, máximo 300</p>
+ </div>
+</ng-template>

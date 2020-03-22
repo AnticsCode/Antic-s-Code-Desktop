@@ -1,0 +1,15 @@
+<div class="create">
+  <mat-tab-group class="header-less-tabs"
+                  [selectedIndex]="index">
+    <mat-tab>
+      <app-create-form-tab-intro (start)="index = 1">
+      </app-create-form-tab-intro>
+    </mat-tab>
+    <mat-tab>
+      <app-create-form-tab-submit (back)="index = 0">
+      </app-create-form-tab-submit>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+

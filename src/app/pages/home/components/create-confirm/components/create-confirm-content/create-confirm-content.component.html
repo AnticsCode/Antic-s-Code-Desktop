@@ -1,0 +1,73 @@
+<div class="confirm template">
+  <h1>Información adicional</h1>
+  <h3>Aquí puedes añadir información adicional en forma de enlace externo.
+    Una vez creado el Artículo pasará a un estado pendiente hasta que lo revise un moderador.
+  </h3>
+
+  <div class="flex">
+    <h4>Añadir enlace</h4>
+    <nb-icon icon="plus-circle-outline"
+             *ngIf="inputs.length < 2"
+             (click)="addLink()">
+    </nb-icon>
+    <nb-icon icon="minus-circle-outline"
+             *ngIf="inputs.length >= 2"
+             (click)="removeLink()"
+             class="disabled">
+    </nb-icon>
+  </div>
+
+  <div *ngFor="let input of inputs">
+    <div class="input-group">
+      <mat-label>Nombre</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="namePopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <input type="text"
+             placeholder="Título del enlace"
+             nbInput
+             [(ngModel)]="name[input]"
+             fullWidth
+             [ngClass]="{'valid': name[input].length >= 5}">
+    </div>
+    <div class="input-group">
+      <mat-label>Dirección URL</mat-label>
+      <nb-icon icon="info-outline"
+               [nbPopover]="urlPopup"
+                nbPopoverPlacement="start"
+                nbPopoverTrigger="hover">
+      </nb-icon>
+      <input type="text"
+             placeholder="Dirección URL"
+             nbInput
+             [(ngModel)]="link[input]"
+             fullWidth
+             [ngClass]="{'invalid': name[input].length > 0 && link[input].length === 0,
+                         'valid': name[input].length >= 5 && link[input].length >= 5}">
+    </div>
+  </div>
+
+  <h4>Ya estás listo para crear el Artículo. Podrás seguir el estado desde tu perfil.</h4>
+
+  <button nbButton
+          status="danger"
+          (click)="submit()"
+          [disabled]="(name[0].length > 0 && link[0].length < 5) ||
+                      (name[1].length > 0 && link[1].length < 5)">
+      Crear
+  </button>
+</div>
+
+<ng-template #namePopup>
+  <div class="info-popup">
+    Ponle un título descriptivo al enlace
+  </div>
+ </ng-template>
+
+ <ng-template #urlPopup>
+  <div class="info-popup">
+    Pega aquí la dirección de internet del enlace, URL
+  </div>
+ </ng-template>

@@ -1,0 +1,28 @@
+<div class="animated fadeInLeft">
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <mat-form-field color="accent">
+      <input matInput
+             placeholder="Email"
+             formControlName="email">
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <input matInput
+             placeholder="Password"
+             formControlName="password"
+             type="password">
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="remember"
+                  [ngModelOptions]="{standalone: true}">
+                  Recordar
+    </mat-checkbox>
+
+    <button type="submit"
+            aria-label="Sign In"
+            [disabled]="signInForm.invalid"
+            mat-button>
+      <span>Entrar</span>
+    </button>
+  </form>
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>
